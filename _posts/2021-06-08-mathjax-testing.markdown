@@ -19,13 +19,26 @@ $${x_A} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 $${L_μH} = {a+1 \abovewithdelims \{ \} 1pt b+2}+c$$
 
-$$a+1 \abovewithdelims [ ] 1pt b	$$
+$$a+1 \abovewithdelims [ ] 1pt b$$
 
 $${L_μH} = {a+1 \abovewithdelims [ ] 1pt b}$$
 
 $${L_μH} = { {a+1 \abovewithdelims [ ] 1pt b} \abovewithdelims \{ \} 1pt b+2}+c$$
 
 $${L_μH} = \dfrac{10^6}{68π^2f^2}{ {a+1 \abovewithdelims [ ] 1pt b} \abovewithdelims \{ \} 1pt b+2}+c$$
+
+$${ln{a+1 \abovewithdelims [ ] 1pt b}}$$
+
+$${ln{\dfrac {a+1}{b}} \abovewithdelims [ ] 1pt c}$$
+
+$${L_μH} = \dfrac{10^6}{68π^2f^2}{ln{\dfrac {24}{D}} \abovewithdelims [ ] 1pt c}$$
+
+$${L_μH} = \dfrac{10^6}{68π^2f^2}{ln{\dfrac {24}{D}} \abovewithdelims [ ] 1pt c}$$
+
+$${L_μH} = \dfrac{10^6}{68π^2f^2}{ln{\dfrac {{24}{{234} \abovewithdelims ( ) 1pt {f}}}{D}} \abovewithdelims [ ] 1pt c}$$
+
+$${L_μH} = \dfrac{10^6}{68π^2f^2}{ln{\dfrac {{24}({{\dfrac {234} {f}} - B)}}{D} -1} \abovewithdelims [ ] 1pt c}$$
+
 
 Reference Links:
 
