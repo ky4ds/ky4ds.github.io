@@ -14,7 +14,11 @@ $${L_μH} = \dfrac{10^6}{68π^2f^2}{ {a \above 1pt b} - {c \above 1pt d} }$$
 
 $$\left\{\frac ab,c\right\}$$
 
-$${L_μH} = \frac{10^6}{68π^2f^2}\left\{\frac {\left[{ln \frac {24 ({\frac{234} {f}} - B)}{D}} - 1 \right] {\left[{ln \frac {24 ({\frac{234} {f}} - B)}{D}} - 1 \right]}}{b}\right\}$$
+$${L_{μH}} = \frac{10^6}{68π^2f^2}\left\{\frac {\left[{ln \frac {24 ({\frac{234} {f}} - B)}{D}} - 1 \right] {\left[{ln \frac {24 ({\frac{234} {f}} - B)}{D}} - 1 \right]}}{\frac {234} {f}}\right\}$$
+
+$${L_{μH}} = \frac{10^6}{68π^2f^2}\left\{\frac {\left[{ln \frac {24 ({\frac{234} {f}} - B)}{D}} - 1 \right] {\left[{ln \frac {24 ({\frac{234} {f}} - B)}{D}} - 1 \right]}}{ \dfrac {234} {f} - B}\right\}$$
+
+$${ \frac a b } - B$$
 
 Reference Links:
 
