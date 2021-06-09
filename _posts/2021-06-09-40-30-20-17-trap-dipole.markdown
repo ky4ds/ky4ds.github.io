@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "A Homebrew Trapped Dipole for 40/30/20/17m"
+date:   2021-06-09 00:40:00 -0400
+categories: jekyll update
+---
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+$$E=mc^2$$
+
+$${x_A} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+$${L_μH} = {a+1 \abovewithdelims \{ \} 1pt b+2}+c$$
+
+[qst]: https://dxc.wc2l.com/QST_Sep_1974_p28-34_58.pdf
