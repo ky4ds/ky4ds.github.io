@@ -61,22 +61,22 @@ Where:
 Fortunately, [66pacific.com][66pacific] has published a
 [utility][coil-dipole-calculator] for this calculation.
 
-One word of caution: it seems that calculator can very highly sensitive
-to the total length of antenna in feet. For the 20m dipole, if you
-select 31 total feet, coils 13.9 feet from center, 14awg wire, and an
-operating frequency of 14Mhz, you get $${9.7μH}$$. For the same values,
-but with 32 total feet, the calculator shows $${4.5μH}$$. At 14MHz, this
-would correspond to 850Ω for $${9.7μH}$$ and 395Ω!
+<!--One word of caution: it seems that calculator can very highly sensitive-->
+<!--to the total length of antenna in feet. For the 20m dipole, if you-->
+<!--select 31 total feet, coils 13.9 feet from center, 14awg wire, and an-->
+<!--operating frequency of 14Mhz, you get $${9.7μH}$$. For the same values,-->
+<!--but with 32 total feet, the calculator shows $${4.5μH}$$. At 14MHz, this-->
+<!--would correspond to 850Ω for $${9.7μH}$$ and 395Ω!-->
 
-IMO, these calculations are too sensitive and our design needs more
-fault tolerance than this; the doorknob caps may only be rated for 20%
-accuracy, and the homebrew coils can be a pain to wind to a precise
-inductance.
+<!--IMO, these calculations are too sensitive and our design needs more-->
+<!--fault tolerance than this; the doorknob caps may only be rated for 20%-->
+<!--accuracy, and the homebrew coils can be a pain to wind to a precise-->
+<!--inductance.-->
 
-Rather, I would recommend doing the math and looking up $$X_L$$ from the
-ARRL chart. It may be challenging to wind inductors for the exact value
-of your calculation and knowing the reactance will make it easier to see
-whether your traps are close enough or not.
+<!--Rather, I would recommend doing the math and looking up $$X_L$$ from the-->
+<!--ARRL chart. It may be challenging to wind inductors for the exact value-->
+<!--of your calculation and knowing the reactance will make it easier to see-->
+<!--whether your traps are close enough or not.-->
 
 ## Method C: Calculate \\(X_L\\) from \\(Dim_A\\) and \\(Dim_B\\)
 
