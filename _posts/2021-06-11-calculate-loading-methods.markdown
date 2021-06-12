@@ -159,7 +159,7 @@ shortened antenna: ((\X_L\\).
 
 * \\(X_L = -jX_2 - (-jX_1)\\)
     * \\(X_L = -j2385 - (-j2763)\\)
-    * \\(X_L = j378Ω\\)
+    * \\(X_L = 378Ω\\)
 
 TODO: check math
 
