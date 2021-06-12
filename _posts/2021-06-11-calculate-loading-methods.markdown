@@ -159,16 +159,7 @@ shortened antenna: ((\X_L\\).
 
 * \\(X_L = -jX_2 - (-jX_1)\\)
     * \\(X_L = -j2385 - (-j2763)\\)
-    * \\(X_L = +j378\\)
-
-To find inductance:
-
-* \\(X_L = 2πfL\\)
-* \\(L = \frac {X_L} {2πf}\\)
-    * \\(L = \frac {378Ω} {2π18.118MHz}\\)
-    * \\(L = 3.32μH\\)
-
-TBA
+    * \\(X_L = j378Ω\\)
 
 TODO: check math
 
