@@ -19,11 +19,11 @@ dipoles, in the LC circuit that makes the traps.
 
 Frequency (MHz):
 
-<input type="text" id="frequency" name="frequency" placeholder="14.055"/>
+<input type="text" id="frequency" name="frequency" placeholder="14.055" onchange="calcDipoleLength()"/>
 
 Normal dipole length (meters):
 
-<input type="text" id="dipoleLength" name="dipoleLenght" placeholder="" readonly/>
+<input type="text" id="dipoleLength" name="dipoleLength" readonly/>
 
 Coil distance from feedpoint (meters):
 
