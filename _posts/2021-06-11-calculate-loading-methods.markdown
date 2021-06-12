@@ -14,7 +14,8 @@ categories: jekyll update
 - [Method A: K1PLP's Lookup Chart](#method-a-k1plps-lookup-chart)
 - [Method B: 66Pacific's Online Calculator](#method-b-66pacifics-online-calculator)
 - [Method C: Calculate \\(X_L\\) from \\(Dim_A\\) and \\(Dim_B\\)](#method-c-calculate-x_l-from-dim_a-and-dim_b)
-- [Comparison for 17m-traps/20m-loads](#comparison-for-17m-traps20m-loads)
+    - [Example 1: Loads for a 17m/20m trapped dipole](#example-1-loads-for-a-17m20m-trapped-dipole)
+- [Comparison](#comparison)
 
 So far, I've seen three methods for calculating shortening coils for
 dipoles. I've successfully used the first, K1PLP's lookup chart, for the
