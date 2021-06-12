@@ -1,10 +1,18 @@
-console.log( 'Hello, world!' );
+//setup
+console.log('init');
 
-var dimA = document.getElementById("dimA")
-var dimB = document.getElementById("dimB")
-
-var keyUpInputs = [dimA, dimB]
-var keyUpsRegistered = keyUpInputs
+var inputIds = [
+  "coilFeedpointDistance",
+  "shortenFeet",
+  "wireDiameter",
+  "electricalHeight",
+  "frequency"
+]
+var inputElements = inputIds
+  .map(inputId =>{
+    return document.getElementById(inputId)
+  })
+var keyUpsRegistered = inputElements
   .map(input => {
     input.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
@@ -14,11 +22,9 @@ var keyUpsRegistered = keyUpInputs
     });
   })
 
+console.log('fin');
+
+//onclick
 window.update = function() {
-  // var dim_a = document.getElementById('dima').value,
-  //     dim_b = document.getElementById('dim_b').value;
-  
   console.log(dimA.value);
 }
-
-console.log('fin');

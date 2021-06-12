@@ -11,7 +11,26 @@ This page is for developing custom js.
 <script id="MathJax-script" async src="/assets/js/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/scratchpad.js"></script>
 
-\\(Dim_A\\): <input type="text" id="dimA" name="dimA"/>
-\\(Dim_B\\): <input type="text" id="dimB" name="dimB"/>
+Calculate inductive reanctance\\(X_L\\)
+
+Frequency:
+
+<input type="text" id="frequency" name="frequency" placeholder="14.055"/>
+
+Coil distance from feedpoint (meters):
+
+<input type="text" id="coilFeedpointDistance" name="coilFeedpointDistance" placeholder=""/>
+
+Amount to shorten (meters):
+
+<input type="text" id="shortenFeet" name="shortenFeet"/>
+
+Wire diameter:
+
+<input type="text" id="wireDiameter" name="wireDiameter"/>
+
+Electrical height from ground:
+
+<input type="text" id="electricalHeight" name="electricalHeight"/>
 
 <button id="submit" onclick="update();">Submit</button>
