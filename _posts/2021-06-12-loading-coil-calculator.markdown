@@ -9,6 +9,8 @@ categories: jekyll update
 <script id="MathJax-script" async src="/assets/js/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/loading-coil-calc.js"></script>
 
+WORK IN PROGRESS
+
 This is a tool to calcuate inductive reanctance\\(X_L\\) for shortened
 dipoles. This is one method that can be used to determine the inductance
 needed to shorten an antenna by a specific amount. These loading coils
