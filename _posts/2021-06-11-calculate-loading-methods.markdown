@@ -122,13 +122,9 @@ loading coil point, *in degrees*.
 
 * \\(β_1 = 90° - 90°[Dim_B + (1 - Dim_A)]\\)
     * \\(β_1 = 90° - 90°[0.85 + (1 - 0.98)]\\)
-    * \\(β_1 = 90° - 90°(0.87)\\)
-    * \\(β_1 = 90° - 78.3°\\)
     * \\(β_1 = 11.7°\\)
 * \\(β_2 = β_1 + 90°[1 - Dim_A]\\)
     * \\(β_2 = 11.7° + 90°[1 - 0.98]\\)
-    * \\(β_2 = 11.7° + 90°[0.02]\\)
-    * \\(β_2 = 11.7° + 1.8°\\)
     * \\(β_2 = 13.5°\\)
 
 Next we must calculate the characteristic impedance of a one-wire
@@ -141,18 +137,15 @@ they're the same for both.
 * \\(Z_0 = 138log\frac {4 * 20ft } d \\)
     * \\(Z_0 = 138log\frac {4 * 20ft } {14awg} \\)
     * \\(Z_0 = 138log\frac {4 * 6096mm } {1.62814mm} \\)
-    * \\(Z_0 = 138log13977 \\)
     * \\(Z_0 = 572Ω \\)
 
 Now to calculate \\(X_1\\) and \\(X_2\\):
 
 * \\(X_1 = -jZ_0cotβ_1\\)
     * \\(X_1 = -j572(cot11.7°)\\)
-    * \\(X_1 = -j572(4.83)\\)
     * \\(X_1 = -j2763\\)
 * \\(X_2 = -jZ_0cotβ_2\\)
     * \\(X_2 = -j572(cot13.5°)\\)
-    * \\(X_2 = -j572(4.17)\\)
     * \\(X_2 = -j2385\\)
     
 Finally, we can calculate the inductive reactance required by our
