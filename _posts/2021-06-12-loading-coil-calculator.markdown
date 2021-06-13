@@ -18,7 +18,8 @@ needed to shorten an antenna by a specific amount. These loading coils
 can be used for single-band dipoles and also for multiband trapped
 dipoles, in the LC circuit that makes the traps.
 
-This calculator uses the method described by
+This calculator uses the method described by Luiz Duarte Lopes, CT1EOJ,
+which was published in the October 2003 edition of QST Magazine.
 
 Frequency (MHz)
 
@@ -47,6 +48,27 @@ Electrical height from ground (in meters):
 <button id="submit" onclick="update();">Submit</button>
 
 ## Limitations
+
+As explained by CT1EOJ, the electrical height is difficult to measure.
+For a 17m trap functioning as a load on 20m, this method gave me a
+inductive reactance, \\(X-L\\), of 378Ω (14 awg and electrical height of
+20ft). After building my trapped dipole with \\(X-L = 200Ω\\), the 20m
+section was less than half the length I expected it to be, which means
+my inductance, and therefore my inductive reactance, was too high and
+needed to be lowered.
+
+In reality, my electrical height is not 20 feet, even though the antenna
+is actually around 30 feet from the ground. Because it is indoors and
+there is significant coupling to nearby conductors, my electrical height
+must be some much lower number.
+
+Electrical height and wire diameter are inputs to the antenna wire
+impedance, \\(Z_0\\). My intuition is that the Nano VNA can take an
+accurate measurement of the antenna wire's characteristic impedance.
+This would allow for more accuracy using this calculator. I will
+update this page if I find out how to do that.
+
+## Further information
 
 See [post on loading coil calculation methods][calc_coils]
 
