@@ -6,8 +6,8 @@ categories: jekyll update
 ---
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="/assets/js/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
-<script id="mathjs-script" async src="/assets/js/node_modules/mathjs/lib/browser/math.js"></script>
+<script id="MathJax-script" async src="/assets/js/npm/mathjax/es5/tex-mml-chtml.js"></script>
+<script id="mathjs-script" async src="/assets/js/npm/math.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/loading-coil-calc.js"></script>
 
 WORK IN PROGRESS
@@ -32,9 +32,9 @@ Coil distance from feedpoint (meters):
 
 Amount to shorten (meters):
 
-<input type="text" id="shortenFeet" name="shortenFeet"/>
+<input type="text" id="shortenMeters" name="shortenMeters"/>
 
-Wire diameter (in mm):
+Wire diameter (in mm, see [awg chart][wikip_awg]):
 
 <input type="text" id="wireDiameter" name="wireDiameter"/>
 
@@ -49,3 +49,4 @@ Electrical height from ground (in meters):
 See [post on loading coil calculation methods][calc_coils]
 
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
+[wikip_awg]: https://en.wikipedia.org/wiki/American_wire_gauge#Tables_of_AWG_wire_sizes
