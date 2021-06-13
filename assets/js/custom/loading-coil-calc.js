@@ -4,8 +4,8 @@ console.log('init');
 var inputIdsDefaultValues = {
   frequency: { inputId: "frequency", default: "14.055" },
   dipoleLength: { inputId: "dipoleLength", default: "10.17" },
-  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "1.6" },
-  shortenMeters: { inputId: "shortenMeters", default: "1.6" },
+  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.25" },
+  shortenAmount: { inputId: "shortenAmount", default: "0.50" },
   wireDiameter: { inputId: "wireDiameter", default: "1.291" },
   electricalHeight: { inputId: "electricalHeight", default: "6" },
 }
@@ -54,7 +54,7 @@ function calcDipoleLength() {
 	var frequency = inputElements.frequency.elem.value;
   var dipoleLength = inputElements.dipoleLength.elem.value;
   var coilFeedpointDistance = inputElements.coilFeedpointDistance.elem.value;
-  var shortenMeters = inputElements.shortenMeters.elem.value;
+  var shortenAmount = inputElements.shortenAmount.elem.value;
   var wireDiameter = inputElements.wireDiameter.elem.value;
   var electricalHeight = inputElements.electricalHeight.elem.value;
   

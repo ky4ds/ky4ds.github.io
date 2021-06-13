@@ -23,19 +23,20 @@ which was published in the October 2003 edition of QST Magazine.
 
 Frequency (MHz)
 
-<input type="text" id="frequency" name="frequency" placeholder="14.055" onchange="calcDipoleLength()"/>
+<input type="text" id="frequency" name="frequency" placeholder="14.055"/>
 
 Normal dipole length (meters):
 
 <input type="text" id="dipoleLength" name="dipoleLength" readonly/>
 
-Coil distance from feedpoint (meters):
+Coil distance from feedpoint (decimal percentage - 0.50 to shorten by
+half):
 
 <input type="text" id="coilFeedpointDistance" name="coilFeedpointDistance" placeholder=""/>
 
-Amount to shorten (meters):
+Amount to shorten (decimal percentage):
 
-<input type="text" id="shortenMeters" name="shortenMeters"/>
+<input type="text" id="shortenAmount" name="shortenAmount"/>
 
 Wire diameter (in mm, see [awg chart][wikip_awg]):
 
