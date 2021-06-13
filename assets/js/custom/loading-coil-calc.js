@@ -10,7 +10,7 @@ console.log('init');
 // ]
 var inputIdsDefaultValues = {
   frequency: { inputId: "frequency", default: "14.055" },
-  //dipoleLength: { inputId: "dipoleLength", default: "" },
+  dipoleLength: { inputId: "dipoleLength", default: "" },
   coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "" },
   shortenFeet: { inputId: "shortenFeet", default: "" },
   wireDiameter: { inputId: "wireDiameter", default: "" },
@@ -22,20 +22,31 @@ var inputElements = Object.entries(inputIdsDefaultValues)
     var key = entry[0]
     var inputId = entry[1].inputId
     var defaultValue = entry[1].default
+	  var element = document.getElementById(inputId);
+    
+    //register enter key calculation
+    element.addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("submit").click();
+        console.log('bleh')
+      }
+    });
 	  
     return {...acc, [key]: {
         inputId: inputId,
-        inputElem: document.getElementById(inputId),
+        elem: element,
         defaultValue: defaultValue
     }}
   }, {})
-// var inputElements = Object.entries(inputIdsDefaultValues)
-//   .map(e =>{
-//     return {
-//       inputId: e[1].inputId,
-//       element: document.getElementById(e.inputId)
-//     }
-//   })
+
+//configure frequency -> dipoleLength calc
+inputElements.frequency.elem.addEventListener("focusout", function(event){
+	var frequency = inputElements.frequency.elem.value
+	var newDipoleLength = math.round(143 / frequency,2)
+  inputElements.dipoleLength.elem.value = newDipoleLength
+})
+
 // var initializeInputElements = inputElements
 //   .map(input => {
 //     input.element.addEventListener("keyup", function(event) {

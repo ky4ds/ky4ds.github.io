@@ -2,6 +2,7 @@
   "name": "ky4ds.github.io",
   "version": "1.0.0",
   "dependencies": {
-    "mathjax": "^3.1.4"
+    "mathjax": "^3.1.4",
+    "mathjs": "^9.4.2"
   }
 }

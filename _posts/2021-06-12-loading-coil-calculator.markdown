@@ -7,6 +7,7 @@ categories: jekyll update
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="/assets/js/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
+<script id="mathjs-script" async src="/assets/js/node_modules/mathjs/lib/browser/math.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/loading-coil-calc.js"></script>
 
 WORK IN PROGRESS
@@ -17,7 +18,7 @@ needed to shorten an antenna by a specific amount. These loading coils
 can be used for single-band dipoles and also for multiband trapped
 dipoles, in the LC circuit that makes the traps.
 
-Frequency (MHz):
+Frequency (MHz)
 
 <input type="text" id="frequency" name="frequency" placeholder="14.055" onchange="calcDipoleLength()"/>
 
