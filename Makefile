@@ -9,8 +9,8 @@ setup:
 
 install-js:
 	npm install
-	cp -r node_modules/mathjax assets/js/npm/mathjax/
-	cp -r node_modules/mathjs/lib/browser  assets/js/npm/mathjs/
+	rsync -a node_modules/mathjax/ assets/js/npm/mathjax/
+	rsync -a node_modules/mathjs/lib/browser/  assets/js/npm/mathjs/
 
 install-gems:
 	bundle config set --local path vendor/bundle

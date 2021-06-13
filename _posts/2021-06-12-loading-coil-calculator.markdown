@@ -7,7 +7,7 @@ categories: jekyll update
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="/assets/js/npm/mathjax/es5/tex-mml-chtml.js"></script>
-<script id="mathjs-script" async src="/assets/js/npm/math.js"></script>
+<script id="mathjs-script" async src="/assets/js/npm/mathjs/browsermath.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/loading-coil-calc.js"></script>
 
 WORK IN PROGRESS
