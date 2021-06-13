@@ -23,7 +23,7 @@ which was published in the October 2003 edition of QST Magazine.
 
 Frequency (MHz)
 
-<input type="text" id="frequency" name="frequency" placeholder="14.055"/>
+<input type="text" id="frequency" name="frequency"/>
 
 Normal dipole length (meters):
 
@@ -32,7 +32,7 @@ Normal dipole length (meters):
 Coil distance from feedpoint (decimal percentage - 0.50 to shorten by
 half):
 
-<input type="text" id="coilFeedpointDistance" name="coilFeedpointDistance" placeholder=""/>
+<input type="text" id="coilFeedpointDistance" name="coilFeedpointDistance"/>
 
 Amount to shorten (decimal percentage):
 
