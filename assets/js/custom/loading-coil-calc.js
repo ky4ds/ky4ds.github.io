@@ -52,11 +52,11 @@ window.update = function() {
 //on frequency update, change dipole length
 function calcDipoleLength() {
 	var frequency = inputElements.frequency.elem.value;
-  var dipoleLength = inputElements.dipoleLength.dipoleLength.value;
-  var coilFeedpointDistance = inputElements.coilFeedpointDistance.dipoleLength.value;
-  var shortenMeters = inputElements.shortenMeters.dipoleLength.value;
-  var wireDiameter = inputElements.wireDiameter.dipoleLength.value;
-  var electricalHeight = inputElements.electricalHeight.dipoleLength.value;
+  var dipoleLength = inputElements.dipoleLength.elem.value;
+  var coilFeedpointDistance = inputElements.coilFeedpointDistance.elem.value;
+  var shortenMeters = inputElements.shortenMeters.elem.value;
+  var wireDiameter = inputElements.wireDiameter.elem.value;
+  var electricalHeight = inputElements.electricalHeight.elem.value;
   
-  console.log("not finished implementing")
+  alert("not finished implementing")
 }

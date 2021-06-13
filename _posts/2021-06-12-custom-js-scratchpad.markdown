@@ -8,7 +8,7 @@ categories: jekyll update
 This page is for developing custom js.
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="/assets/js/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
+<script id="MathJax-script" async src="/assets/js/npm/mathjax/es5/tex-mml-chtml.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/scratchpad.js"></script>
 
 Calculate inductive reanctance\\(X_L\\)

@@ -7,7 +7,7 @@ categories: jekyll update
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="/assets/js/npm/mathjax/es5/tex-mml-chtml.js"></script>
-<script id="mathjs-script" async src="/assets/js/npm/mathjs/browsermath.js"></script>
+<script id="mathjs-script" async src="/assets/js/npm/mathjs/math.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/loading-coil-calc.js"></script>
 
 WORK IN PROGRESS
@@ -17,6 +17,8 @@ dipoles. This is one method that can be used to determine the inductance
 needed to shorten an antenna by a specific amount. These loading coils
 can be used for single-band dipoles and also for multiband trapped
 dipoles, in the LC circuit that makes the traps.
+
+This calculator uses the method described by
 
 Frequency (MHz)
 
