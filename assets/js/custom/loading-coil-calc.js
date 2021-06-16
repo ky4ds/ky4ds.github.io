@@ -4,7 +4,7 @@ console.log('init');
 var inputIdsDefaultValues = {
   frequency: { inputId: "frequency", default: "14.055" },
   dipoleLength: { inputId: "dipoleLength", default: "10.17" },
-  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.85" },
+  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.78" },
   shortenAmount: { inputId: "shortenAmount", default: "0.02" },
   wireDiameter: { inputId: "wireDiameter", default: "1.628" },
   electricalHeight: { inputId: "electricalHeight", default: "6" },
