@@ -86,7 +86,7 @@ However, the proper calculation would have been
 
 The takeaway is that it is very important to compute the amount to
 shorten and coil distance and as accurately as possible, since these
-inputs produce wide swings in inductive reactance, \\(X-L\\). Do not
+inputs produce wide swings in inductive reactance, \\(X_L\\). Do not
 just use the band meters! Instead, calculate precise lengths from
 precise frequencies.
 
