@@ -50,11 +50,11 @@ Electrical height from ground (in meters):
 
 Load reactance, \\(X_L\\):
 
-<input type="text" id="reactanceLoad" name="reactanceLoad" readonly/>
+<input type="text" id="reactanceLoad" name="reactanceLoad" disabled="disabled" readonly/>
 
 Coil inductance, \\(L_{coil}\\):
 
-<input type="text" id="coilInductance" name="coilInductance" readonly/>
+<input type="text" id="coilInductance" name="coilInductance" disabled="disabled" readonly/>
 
 ## Notes
 
