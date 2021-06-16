@@ -9,6 +9,7 @@ var inputIdsDefaultValues = {
   wireDiameter: { inputId: "wireDiameter", default: "1.628" },
   electricalHeight: { inputId: "electricalHeight", default: "6" },
   reactanceLoad: { inputId: "reactanceLoad", default: "" },
+  coilInductance: { inputId: "coilInductance", default: "" },
 }
 
 //setup input elements; typing enter in any box will run calculator
@@ -65,6 +66,7 @@ function calcDipoleLength() {
   var reactanceOne = math.round(math.multiply(-1,math.multiply(impedanceZero,math.cot(betaOne))),5)
   var reactanceTwo = math.round(math.multiply(-1,math.multiply(impedanceZero,math.cot(betaTwo))),5)
   var reactanceLoad = math.round(math.add(reactanceTwo,reactanceOne),0)
+	var coilInductance = math.round(math.divide(reactanceLoad,math.multiply(2,math.round(math.PI,10),frequency)),2)
   
   console.log(`betaOne ${betaOne}`)
   console.log(`betaTwo ${betaTwo}`)
@@ -72,6 +74,8 @@ function calcDipoleLength() {
   console.log(`reactanceOne ${reactanceOne}`)
   console.log(`reactanceTwo ${reactanceTwo}`)
   console.log(`reactanceLoad ${reactanceLoad}`)
+  console.log(`coilInductance ${coilInductance}`)
   
   inputElements.reactanceLoad.elem.value = `${reactanceLoad.toString()}Ω`
+  inputElements.coilInductance.elem.value = `${coilInductance.toString()}μH`
 }
