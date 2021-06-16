@@ -28,9 +28,8 @@ Normal dipole length (meters):
 
 <input type="text" id="dipoleLength" name="dipoleLength" disabled="disabled" readonly hidden/>
 
-Coil distance from feedpoint relative to normal length (decimal
-percentage - 0.50 to place loads at pre-shortened halfway point).
-Determined by outer and inner frequencies:
+Coil distance from feedpoint relative to normal length. Determined by
+outer and inner frequencies:
 
 <span id="coilFeedpointDistanceSpan">\\(d_{fromfeedpt} = \\)</span>
 
