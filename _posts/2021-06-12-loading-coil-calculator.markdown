@@ -68,9 +68,7 @@ wild swings in electrical height.
 When I built my trapped 17m/20m trapped dipole with \\(X-L = 200Ω\\),
 the 20m section was less than half the length I expected it to be. That
 means my inductance, and therefore my inductive reactance, was too high
-and should have been lower. However this calculator gives a \\(X-L\\) of
-over 200Ω for almost all combinations of wire diameter and electrical
-height, when I should have expected less.
+and should have been lower.
 
 Turns out my reactance was too high because I overshot the coil distance
 from feedpoint. I calculated
