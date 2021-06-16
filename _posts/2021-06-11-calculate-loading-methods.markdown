@@ -33,8 +33,7 @@ I simply used the loading coil chart from Chapter 9 of the [ARRL Antenna
 Book, Vol 2][antenna_book_vol2] to calculate $$X_L$$. See figure 9.51.
 Given $${Dim_A}$$ and $${Dim_B}$$, the chart will tell you $$X_L$$,
 inductive reactance for the traps. This chart is also available in an
-article from Jerry Hall, K1PLP, in [QST magazine, September 1974][K1PLP]
-(mentioned below).
+article from Jerry Hall, K1PLP, in QST magazine, September 1974].
 
 I highly recommend ARRL's Antenna Book. Chapter 9 in particular has
 several sections dedicated to dipoles and loading techniques. Here is a
@@ -47,7 +46,7 @@ take both wire gauge and antenna height into consideration.
 ## Method B: 66Pacific's Online Calculator
 
 The math to calculate inductance, given $${Dim_A}$$ and $${Dim_B}$$ is
-quite involved (from [QST magazine, September 1974][K1PLP]):
+quite involved (from QST magazine, September 1974):
 
 $${L_{μH}} = \frac{10^6}{68π^2f^2}\left\{\frac {\left[{ln \frac {24 ({\frac{234} {f}} - B)}{D}} - 1 \right] [(1 - \frac {fB} {234})^2 - 1]}{ \dfrac {234} {f} - B} - \frac {\left[ln{\frac {24(\frac {A} {2} - B)} {D}} - 1\right]\left[(\frac {\frac {fA} {2} - fB}{234})^2 - 1\right]} {\frac {A} {2} - B} \right\}$$
 
@@ -164,7 +163,6 @@ by Luiz Duarte Lopes, CT1EOJ, QST Oct 2003.
 
 TBA
 
-[K1PLP]: https://dxc.wc2l.com/QST_Sep_1974_p28-34_58.pdf
 [antenna_book_vol2]: https://amzn.to/2TYz4Xj
 [antenna_book]: https://amzn.to/3wgernK
 [coil-dipole-calculator]: https://www.66pacific.com/calculators/coil-shortened-dipole-antenna-calculator.aspx
