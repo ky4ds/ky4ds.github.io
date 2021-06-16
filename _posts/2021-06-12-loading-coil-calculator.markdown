@@ -27,7 +27,7 @@ Frequency (MHz)
 
 Normal dipole length (meters):
 
-<input type="text" id="dipoleLength" name="dipoleLength" readonly/>
+<input type="text" id="dipoleLength" name="dipoleLength" disabled="disabled" readonly/>
 
 Coil distance from feedpoint (decimal percentage - 0.50 to shorten by
 half):
@@ -56,7 +56,7 @@ Coil inductance, \\(L_{coil}\\):
 
 <input type="text" id="coilInductance" name="coilInductance" readonly/>
 
-## Limitations
+## Notes
 
 As explained by CT1EOJ, the electrical height is difficult to measure.
 For a 17m trap functioning as a load on 20m, this method gave me a
@@ -83,7 +83,9 @@ However, the proper calculation would have been
 
 The takeaway is that it is very important to compute the coil distance
 and amount to shorten as accurately as possible, since these inputs
-produce wide swings in inductive reactance, \\(X-L\\).
+produce wide swings in inductive reactance, \\(X-L\\). Do not just use
+the band meters! Instead, calculate precise lengths from precise
+frequencies.
 
 Electrical height and wire diameter are inputs to the antenna wire
 impedance, \\(Z_0\\). My intuition is that the Nano VNA can take an
