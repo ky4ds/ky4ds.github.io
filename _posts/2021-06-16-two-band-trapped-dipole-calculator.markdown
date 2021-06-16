@@ -98,11 +98,6 @@ this page if I find out how to do that. However, neither wire diameter,
 nor electrical height seem to have too much impact on the final coil
 inductance.
 
-## TODO
-
-On an upcoming blog post, I will expand this calculator to compute trap
-inductance and capacitance for a two band trapped dipole.
-
 ## Further information
 
 See [post on loading coil calculation methods][calc_coils]
