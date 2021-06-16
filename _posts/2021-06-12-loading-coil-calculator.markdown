@@ -60,22 +60,25 @@ Coil inductance, \\(L_{coil}\\):
 
 As explained by CT1EOJ, the electrical height is difficult to measure.
 For a 17m trap functioning as a load on 20m, this method gave me a
-inductive reactance, \\(X-L\\), of 378Ω (14 awg and electrical height of
-20ft). After building my trapped dipole with \\(X-L = 200Ω\\), the 20m
-section was less than half the length I expected it to be, which means
-my inductance, and therefore my inductive reactance, was too high and
-needed to be lowered.
+inductive reactance, \\(X-L\\), of 63Ω (14 awg and electrical height of
+20ft). After building this calculator and trying different electrical
+heights, the coil inductance doesn't seem to be too sensitive, even with
+wild swings in electrical height.
 
-In reality, my electrical height is not 20 feet, even though the antenna
-is actually around 30 feet from the ground. Because it is indoors and
-there is significant coupling to nearby conductors, my electrical height
-must be some much lower number.
+When I built my trapped 17m/20m trapped dipole with \\(X-L = 200Ω\\),
+the 20m section was less than half the length I expected it to be. That
+means my inductance, and therefore my inductive reactance, was too high
+and should have been lower. If the real inductive reactance should have
+been 63Ω, that would explain the 20m section was much shorter than I'd
+been expecting.
 
 Electrical height and wire diameter are inputs to the antenna wire
 impedance, \\(Z_0\\). My intuition is that the Nano VNA can take an
 accurate measurement of the antenna wire's characteristic impedance.
-This would allow for more accuracy using this calculator. I will
-update this page if I find out how to do that.
+This would allow for more accuracy using this calculator. I will update
+this page if I find out how to do that. However, neither wire diameter,
+nor electrical height seem to have too much impact on the final coil
+inductance.
 
 ## Further information
 
