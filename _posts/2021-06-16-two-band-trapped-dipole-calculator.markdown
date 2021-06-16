@@ -10,8 +10,9 @@ categories: jekyll update
 <script id="mathjs-script" async src="/assets/js/npm/mathjs/math.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/two-band-dipole-calc.js"></script>
 
-Prefilled with values to calculate a 17/20m trapped dipole, with loading
-removing only 2% of antenna length.
+This is a calculator to assist with designing a two band shortened trap
+dipole. Prefilled values are for a 17/20m trapped dipole, with
+loading removing only 2% of antenna length.
 
 Inner Frequency in MHz (higher frequency)
 
@@ -53,9 +54,9 @@ Load reactance, <span id="reactanceLoadSpan">\\(X_L = \\)</span>
 
 <input type="text" id="reactanceLoad" name="reactanceLoad" disabled="disabled" readonly hidden/>
 
-Coil inductance, <span id="coilInductanceSpan">\\(L_{coil} = \\)</span>
+Coil inductance, <span id="trapInductanceSpan">\\(L_{trap} = \\)</span>
 
-<input type="text" id="coilInductance" name="coilInductance" disabled="disabled" readonly hidden/>
+<input type="text" id="trapInductance" name="trapInductance" disabled="disabled" readonly hidden/>
 
 Trap capacitance, <span id="trapCapacitance">\\(C_{trap} = \\)</span>
 

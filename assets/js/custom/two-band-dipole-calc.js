@@ -10,7 +10,8 @@ var inputIdsDefaultValues = {
   wireDiameter: { inputId: "wireDiameter", default: "1.628" },
   electricalHeight: { inputId: "electricalHeight", default: "6" },
   reactanceLoad: { inputId: "reactanceLoad", default: "" },
-  coilInductance: { inputId: "coilInductance", default: "" },
+  trapInductance: { inputId: "trapInductance", default: "" },
+  trapCapacitance: { inputId: "trapCapacitance", default: "" },
 }
 
 //setup input elements; typing enter in any box will run calculator
@@ -87,8 +88,8 @@ async function calcDipoleLength() {
   var reactanceOne = math.evaluate(`-1 * ${impedanceZero} * cot(${betaOne} deg)`)
   var reactanceTwo = math.evaluate(`-1 * ${impedanceZero} * cot(${betaTwo} deg)`)
   var reactanceLoad = math.round(math.evaluate(`${reactanceTwo} - ${reactanceOne}`),0)
-  var coilInductance = math.round(math.evaluate(`${reactanceLoad} / (2 * pi * ${outerFrequency})`),2)
-  var trapCapacitance = math.round(math.evaluate(`1 * 10^6 / ((2 * pi * ${innerFrequency})^2 * ${coilInductance})`),2)
+  var trapInductance = math.round(math.evaluate(`${reactanceLoad} / (2 * pi * ${outerFrequency})`),2)
+  var trapCapacitance = math.round(math.evaluate(`1 * 10^6 / ((2 * pi * ${innerFrequency})^2 * ${trapInductance})`),2)
   
   console.log(`betaOne ${betaOne}`)
   console.log(`betaTwo ${betaTwo}`)
@@ -96,13 +97,13 @@ async function calcDipoleLength() {
   console.log(`reactanceOne ${reactanceOne}`)
   console.log(`reactanceTwo ${reactanceTwo}`)
   console.log(`reactanceLoad ${reactanceLoad}`)
-  console.log(`coilInductance ${coilInductance}`)
+  console.log(`trapInductance ${trapInductance}`)
   console.log(`trapCapacitance ${trapCapacitance}`)
   
   inputElements.reactanceLoad.elem.value = `${reactanceLoad.toString()}Ω`
   document.getElementById("reactanceLoadSpan").textContent = `\\(X_L = \\) ${reactanceLoad.toString()}Ω`
-  inputElements.coilInductance.elem.value = `${coilInductance.toString()}μH`
-  document.getElementById("coilInductanceSpan").textContent = `\\(L_{coil} = \\) ${coilInductance.toString()}μH`
+  inputElements.trapInductance.elem.value = `${trapInductance.toString()}μH`
+  document.getElementById("trapInductanceSpan").textContent = `\\(L_{trap} = \\) ${trapInductance.toString()}μH`
   document.getElementById("trapCapacitance").textContent = `\\(C_{trap} = \\) ${trapCapacitance.toString()}pF`
   
   MathJax.typeset()
