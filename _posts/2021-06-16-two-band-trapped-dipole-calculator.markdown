@@ -59,6 +59,12 @@ Coil inductance, <span id="trapInductanceSpan">\\(L_{trap} = \\)</span>
 
 Trap capacitance, <span id="trapCapacitance">\\(C_{trap} = \\)</span>
 
+## Caveat
+
+I have not yet built an antenna using these values, however these values
+agree with alternative calculations I've done while designing and
+building my first trap dipole.
+
 ## Notes
 
 As explained by CT1EOJ, the electrical height is difficult to measure.
