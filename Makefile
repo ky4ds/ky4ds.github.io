@@ -5,12 +5,12 @@ export
 
 setup:
 	sudo gem install bundler
-	sudo npm install --global yarn
 
 install-js:
 	npm install
 	rsync -a node_modules/mathjax/ assets/js/npm/mathjax/
 	rsync -a node_modules/mathjs/lib/browser/  assets/js/npm/mathjs/
+	rsync -a node_modules/mathjs/README.md  assets/js/npm/mathjs/
 
 install-gems:
 	bundle config set --local path vendor/bundle
