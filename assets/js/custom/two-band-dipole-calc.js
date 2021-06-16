@@ -13,20 +13,6 @@ var inputIdsDefaultValues = {
   coilInductance: { inputId: "coilInductance", default: "" },
 }
 
-//provide function to wait for math lib to load
-const delay = ms => new Promise(res => setTimeout(res, ms));
-(async function waitForMaths() {
-  for (var i = 0; i < Number.MAX_SAFE_INTEGER; i++) {
-    await delay(i * i * 100)
-    if (typeof math !== "undefined" && typeof MathJax !== "undefined" ) {
-      calcDipoleLength()
-      updateDipoleLength()
-      return true
-    }
-  }
-  return true
-})()
-
 //setup input elements; typing enter in any box will run calculator
 var inputElements = Object.entries(inputIdsDefaultValues)
   .reduce((acc, entry) =>{
@@ -52,29 +38,44 @@ var inputElements = Object.entries(inputIdsDefaultValues)
     }}
   }, {})
 
-//configure innerjrequency -> dipoleLength calc; triggered by tab
-// inputElements.outerFrequency.elem.addEventListener("focusout", function(event){
-// 	var outerFrequency = inputElements.outerFrequency.elem.value
-//   var dipoleLength =  math.round(143 / outerFrequency, 2)
-//   inputElements.dipoleLength.elem.value = math.round(143 / outerFrequency, 2)
-//   document.getElementById("dipoleLengthSpan").textContent =  `\\(L_{coil} = \\) ${dipoleLength.toString()}μH`
-// })
-inputElements.outerFrequency.elem.addEventListener("focusout", updateDipoleLength)
+inputElements.innerFrequency.elem.addEventListener("focusout", updateRequiredFields)
+inputElements.outerFrequency.elem.addEventListener("focusout", updateRequiredFields)
+
+//wait for math lib to load
+const delay = ms => new Promise(res => setTimeout(res, ms));
+(async function waitForMaths() {
+  for (var i = 0; i < Number.MAX_SAFE_INTEGER; i++) {
+    await delay(i * i * 100)
+    if (typeof math !== "undefined" && typeof MathJax !== "undefined" ) {
+      calcDipoleLength()
+      updateRequiredFields()
+      return true
+    }
+  }
+  return true
+})()
 
 console.log('fin')
 
-//calculate dipole length before calculating
-async function updateDipoleLength(event) {
+async function updateRequiredFields(event) {
   var outerFrequency = inputElements.outerFrequency.elem.value
-  var dipoleLength = math.round(143 / outerFrequency, 2)
+  var innerFrequency = inputElements.innerFrequency.elem.value
+  //calculate dipole length before calculating
+  var dipoleLength = math.round(math.evaluate(`143 / ${outerFrequency}`),2)
   inputElements.dipoleLength.elem.value = dipoleLength
-  document.getElementById("dipoleLengthSpan").textContent = `\\(L_{coil} = \\) ${dipoleLength.toString()}m`
+  document.getElementById("dipoleLengthSpan").textContent = `\\(l_{coil} = \\) ${dipoleLength.toString()}m`
+	
+  //calculate coil distance
+  var coilFeedpointDistance = math.round(math.evaluate(`${outerFrequency} / ${innerFrequency}`),2)
+  inputElements.coilFeedpointDistance.elem.value = coilFeedpointDistance
+  document.getElementById("coilFeedpointDistanceSpan").textContent = `\\(d_{fromfeedpt} = \\) ${coilFeedpointDistance.toString()}m`
   MathJax.typeset()
 }
 
 //on frequency update, change dipole length
 async function calcDipoleLength() {
   var outerFrequency = math.bignumber(inputElements.outerFrequency.elem.value)
+  var innerFrequency = math.bignumber(inputElements.innerFrequency.elem.value)
   var coilFeedpointDistance = math.bignumber(inputElements.coilFeedpointDistance.elem.value)
   var shortenAmount = math.bignumber(inputElements.shortenAmount.elem.value)
   var wireDiameter = math.bignumber(inputElements.wireDiameter.elem.value)
@@ -87,6 +88,7 @@ async function calcDipoleLength() {
   var reactanceTwo = math.evaluate(`-1 * ${impedanceZero} * cot(${betaTwo} deg)`)
   var reactanceLoad = math.round(math.evaluate(`${reactanceTwo} - ${reactanceOne}`),0)
   var coilInductance = math.round(math.evaluate(`${reactanceLoad} / (2 * pi * ${outerFrequency})`),2)
+  var trapCapacitance = math.round(math.evaluate(`1 * 10^6 / ((2 * pi * ${innerFrequency})^2 * ${coilInductance})`),2)
   
   console.log(`betaOne ${betaOne}`)
   console.log(`betaTwo ${betaTwo}`)
@@ -95,11 +97,13 @@ async function calcDipoleLength() {
   console.log(`reactanceTwo ${reactanceTwo}`)
   console.log(`reactanceLoad ${reactanceLoad}`)
   console.log(`coilInductance ${coilInductance}`)
+  console.log(`trapCapacitance ${trapCapacitance}`)
   
   inputElements.reactanceLoad.elem.value = `${reactanceLoad.toString()}Ω`
   document.getElementById("reactanceLoadSpan").textContent = `\\(X_L = \\) ${reactanceLoad.toString()}Ω`
   inputElements.coilInductance.elem.value = `${coilInductance.toString()}μH`
   document.getElementById("coilInductanceSpan").textContent = `\\(L_{coil} = \\) ${coilInductance.toString()}μH`
+  document.getElementById("trapCapacitance").textContent = `\\(C_{trap} = \\) ${trapCapacitance.toString()}pF`
   
   MathJax.typeset()
 }

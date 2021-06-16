@@ -27,9 +27,12 @@ Normal dipole length (meters):
 <input type="text" id="dipoleLength" name="dipoleLength" disabled="disabled" readonly hidden/>
 
 Coil distance from feedpoint relative to normal length (decimal
-percentage - 0.50 to place loads at pre-shortened halfway point):
+percentage - 0.50 to place loads at pre-shortened halfway point).
+Determined by outer and inner frequencies:
 
-<input type="text" id="coilFeedpointDistance" name="coilFeedpointDistance"/>
+<span id="coilFeedpointDistanceSpan">\\(d_{fromfeedpt} = \\)</span>
+
+<input type="text" id="coilFeedpointDistance" name="coilFeedpointDistance" hidden/>
 
 Amount to shorten (decimal percentage):
 
@@ -52,6 +55,8 @@ Load reactance, <span id="reactanceLoadSpan">\\(X_L = \\)</span>
 Coil inductance, <span id="coilInductanceSpan">\\(L_{coil} = \\)</span>
 
 <input type="text" id="coilInductance" name="coilInductance" disabled="disabled" readonly hidden/>
+
+Trap capacitance, <span id="trapCapacitance">\\(C_{trap} = \\)</span>
 
 ## Notes
 
