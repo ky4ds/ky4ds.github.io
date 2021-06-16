@@ -45,13 +45,14 @@ inputElements.frequency.elem.addEventListener("focusout", function(event){
 
 console.log('fin')
 
+//run calculation after math.js has loaded
 const delay = ms => new Promise(res => setTimeout(res, ms));
 range = [...Array(1000).keys()]
 range
   .some(async function (range = 1000, i) {
-    await delay(1000)
+    await delay(i*i+500)
     if (typeof math !== "undefined") {
-	    calcDipoleLength()
+      calcDipoleLength()
       return true
     }
   })
