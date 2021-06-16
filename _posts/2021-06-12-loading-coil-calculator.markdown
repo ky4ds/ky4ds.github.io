@@ -81,11 +81,11 @@ However, the proper calculation would have been
 
 \\( \frac {143} {18.118MHz} ÷ \frac {143} {14.055MHz} = 77.58\%\\)
 
-The takeaway is that it is very important to compute the coil distance
-and amount to shorten as accurately as possible, since these inputs
-produce wide swings in inductive reactance, \\(X-L\\). Do not just use
-the band meters! Instead, calculate precise lengths from precise
-frequencies.
+The takeaway is that it is very important to compute the amount to
+shorten and coil distance and as accurately as possible, since these
+inputs produce wide swings in inductive reactance, \\(X-L\\). Do not
+just use the band meters! Instead, calculate precise lengths from
+precise frequencies.
 
 Electrical height and wire diameter are inputs to the antenna wire
 impedance, \\(Z_0\\). My intuition is that the Nano VNA can take an
