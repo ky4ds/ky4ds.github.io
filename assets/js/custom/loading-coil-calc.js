@@ -28,7 +28,7 @@ var inputElements = Object.entries(inputIdsDefaultValues)
         document.getElementById("calculate").click();
       }
     });
-	  
+    
     return {...acc, [key]: {
         inputId: inputId,
         elem: element,
@@ -45,11 +45,16 @@ inputElements.frequency.elem.addEventListener("focusout", function(event){
 
 console.log('fin')
 
-//on calculate, run calculation
-window.update = function() {
-  calcDipoleLength()
-  console.log("not implemented");
-}
+const delay = ms => new Promise(res => setTimeout(res, ms));
+range = [...Array(1000).keys()]
+range
+  .some(async function (range = 1000, i) {
+    await delay(1000)
+    if (typeof math !== "undefined") {
+	    calcDipoleLength()
+      return true
+    }
+  })
 
 //on frequency update, change dipole length
 function calcDipoleLength() {
