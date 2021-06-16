@@ -10,7 +10,8 @@ categories: jekyll update
 <script id="mathjs-script" async src="/assets/js/npm/mathjs/math.js"></script>
 <script id="scratchpad" async src="/assets/js/custom/two-band-dipole-calc.js"></script>
 
-WORK IN PROGRESS
+Prefilled with values to calculate a 17/20m trapped dipole, with loading
+removing only 2% of antenna length.
 
 Inner Frequency in MHz (higher frequency)
 
