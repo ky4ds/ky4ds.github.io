@@ -14,7 +14,7 @@ categories: jekyll update
 - [Method A: K1PLP's Lookup Chart](#method-a-k1plps-lookup-chart)
 - [Method B: 66Pacific's Online Calculator](#method-b-66pacifics-online-calculator)
 - [Method C: Calculate \\(X_L\\) from \\(Dim_A\\) and \\(Dim_B\\)](#method-c-calculate-x_l-from-dim_a-and-dim_b)
-    - [Example 1: Loads for a 17m/20m trapped dipole](#example-1-loads-for-a-17m20m-trapped-dipole)
+    - [Example 1: Loads for a full length 17m/20m trapped dipole](#example-1-loads-for-a-full-length-17m20m-trapped-dipole)
 - [Comparison](#comparison)
 
 So far, I've seen three methods for calculating shortening coils for
@@ -84,7 +84,7 @@ Fortunately, [66pacific.com][66pacific] has published a
 Luiz Duarte Lopes, CT1EOJ , has published an article, [Designing a
 Shortened Antenna][CT1EOJ] in the October 2003 edition of QST.
 
-### Example 1: Loads for a 17m/20m trapped dipole
+### Example 1: Loads for a full length 17m/20m trapped dipole
 
 For a resonant two-band dipole on 17m and 20m, the inner part of the
 antenna will be 8.5m (halfwave on 17m). Traps will be placed at ends of

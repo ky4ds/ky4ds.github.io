@@ -4,10 +4,11 @@ console.log('init');
 var inputIdsDefaultValues = {
   frequency: { inputId: "frequency", default: "14.055" },
   dipoleLength: { inputId: "dipoleLength", default: "10.17" },
-  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.25" },
-  shortenAmount: { inputId: "shortenAmount", default: "0.50" },
-  wireDiameter: { inputId: "wireDiameter", default: "1.291" },
+  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.85" },
+  shortenAmount: { inputId: "shortenAmount", default: "0.02" },
+  wireDiameter: { inputId: "wireDiameter", default: "1.628" },
   electricalHeight: { inputId: "electricalHeight", default: "6" },
+  reactanceLoad: { inputId: "reactanceLoad", default: "" },
 }
 
 //setup input elements; typing enter in any box will run calculator
@@ -23,7 +24,7 @@ var inputElements = Object.entries(inputIdsDefaultValues)
     element.addEventListener("keyup", function(event) {
       if (event.key === "Enter") {
         event.preventDefault();
-        document.getElementById("submit").click();
+        document.getElementById("calculate").click();
       }
     });
 	  
@@ -41,9 +42,9 @@ inputElements.frequency.elem.addEventListener("focusout", function(event){
   inputElements.dipoleLength.elem.value = newDipoleLength
 })
 
-console.log('fin');
+console.log('fin')
 
-//on submit, run calculation
+//on calculate, run calculation
 window.update = function() {
   calcDipoleLength()
   console.log("not implemented");
@@ -51,12 +52,26 @@ window.update = function() {
 
 //on frequency update, change dipole length
 function calcDipoleLength() {
-	var frequency = inputElements.frequency.elem.value;
-  var dipoleLength = inputElements.dipoleLength.elem.value;
-  var coilFeedpointDistance = inputElements.coilFeedpointDistance.elem.value;
-  var shortenAmount = inputElements.shortenAmount.elem.value;
-  var wireDiameter = inputElements.wireDiameter.elem.value;
-  var electricalHeight = inputElements.electricalHeight.elem.value;
+	var frequency = math.bignumber(inputElements.frequency.elem.value)
+  var dipoleLength = math.bignumber(inputElements.dipoleLength.elem.value)
+  var coilFeedpointDistance = math.bignumber(inputElements.coilFeedpointDistance.elem.value)
+  var shortenAmount = math.bignumber(inputElements.shortenAmount.elem.value)
+  var wireDiameter = math.bignumber(inputElements.wireDiameter.elem.value)
+  var electricalHeight = math.bignumber(inputElements.electricalHeight.elem.value)
+	
+  var betaOne = math.subtract(90,math.multiply(90,(math.add(shortenAmount,coilFeedpointDistance))))
+  var betaTwo = math.subtract(90,math.multiply(math.bignumber(90),coilFeedpointDistance))
+  var impedanceZero = math.round(math.multiply(math.bignumber(138),math.log10(math.divide(math.multiply(4,electricalHeight),math.divide(wireDiameter,math.bignumber(1000))))),5)
+  var reactanceOne = math.round(math.multiply(-1,math.multiply(impedanceZero,math.cot(betaOne))),5)
+  var reactanceTwo = math.round(math.multiply(-1,math.multiply(impedanceZero,math.cot(betaTwo))),5)
+  var reactanceLoad = math.round(math.add(reactanceTwo,reactanceOne),0)
   
-  alert("not finished implementing")
+  console.log(`betaOne ${betaOne}`)
+  console.log(`betaTwo ${betaTwo}`)
+  console.log(`impedanceZero ${impedanceZero}`)
+  console.log(`reactanceOne ${reactanceOne}`)
+  console.log(`reactanceTwo ${reactanceTwo}`)
+  console.log(`reactanceLoad ${reactanceLoad}`)
+  
+  inputElements.reactanceLoad.elem.value = `${reactanceLoad.toString()}Ω`
 }
