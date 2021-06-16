@@ -68,8 +68,22 @@ wild swings in electrical height.
 When I built my trapped 17m/20m trapped dipole with \\(X-L = 200Ω\\),
 the 20m section was less than half the length I expected it to be. That
 means my inductance, and therefore my inductive reactance, was too high
-and should have been lower. However this calculator gives me over 200Ω
-for almost all combinations of wire diameter and electrical height.
+and should have been lower. However this calculator gives a \\(X-L\\) of
+over 200Ω for almost all combinations of wire diameter and electrical
+height, when I should have expected less.
+
+Turns out my reactance was too high because I overshot the coil distance
+from feedpoint. I calculated
+
+\\(17m/20m = 85\%\\)
+
+However, the proper calculation would have been
+
+\\( \frac {143} {18.118MHz} ÷ \frac {143} {14.055MHz} = 77.58\%\\)
+
+The takeaway is that it is very important to compute the coil distance
+and amount to shorten as accurately as possible, since these inputs
+produce wide swings in inductive reactance, \\(X-L\\).
 
 Electrical height and wire diameter are inputs to the antenna wire
 impedance, \\(Z_0\\). My intuition is that the Nano VNA can take an
@@ -85,3 +99,4 @@ See [post on loading coil calculation methods][calc_coils]
 
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
 [wikip_awg]: https://en.wikipedia.org/wiki/American_wire_gauge#Tables_of_AWG_wire_sizes
+[66pacific]: https://www.66pacific.com/calculators/coil-shortened-dipole-antenna-calculator.aspx
