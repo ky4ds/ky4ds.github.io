@@ -69,7 +69,8 @@ async function updateRequiredFields(event) {
   //calculate coil distance
   var coilFeedpointDistance = math.round(math.evaluate(`${outerFrequency} / ${innerFrequency}`),4)
   inputElements.coilFeedpointDistance.elem.value = coilFeedpointDistance
-  document.getElementById("coilFeedpointDistanceSpan").textContent = `\\(d_{fromfeedpt} = \\) ${(coilFeedpointDistance * 100).toString()}%`
+  var coilFeedpointDistanceDisplay = math.round(math.evaluate(`${outerFrequency} / ${innerFrequency} * 100`),2)
+  document.getElementById("coilFeedpointDistanceSpan").textContent = `\\(d_{fromfeedpt} = \\) ${(coilFeedpointDistanceDisplay).toString()}%`
   MathJax.typeset()
 }
 
