@@ -47,10 +47,10 @@ console.log('fin')
 
 //run calculation after math.js has loaded
 const delay = ms => new Promise(res => setTimeout(res, ms));
-range = [...Array(1000).keys()]
+range = [...Array(100000).keys()]
 range
-  .some(async function (range = 1000, i) {
-    await delay(i*i+500)
+  .some(async function (range, i) {
+    await delay(i*i+100)
     if (typeof math !== "undefined") {
       calcDipoleLength()
       return true
