@@ -4,7 +4,7 @@ console.log('init');
 var inputIdsDefaultValues = {
   frequency: { inputId: "frequency", default: "14.055" },
   dipoleLength: { inputId: "dipoleLength", default: "10.17" },
-  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.78" },
+  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.7758" },
   shortenAmount: { inputId: "shortenAmount", default: "0.02" },
   wireDiameter: { inputId: "wireDiameter", default: "1.628" },
   electricalHeight: { inputId: "electricalHeight", default: "6" },
@@ -39,23 +39,23 @@ var inputElements = Object.entries(inputIdsDefaultValues)
 //configure frequency -> dipoleLength calc; triggered by tab
 inputElements.frequency.elem.addEventListener("focusout", function(event){
 	var frequency = inputElements.frequency.elem.value
-	var newDipoleLength = math.round(143 / frequency,2)
-  inputElements.dipoleLength.elem.value = newDipoleLength
+  inputElements.dipoleLength.elem.value = math.round(143 / frequency, 2)
 })
 
 console.log('fin')
 
 //run calculation after math.js has loaded
 const delay = ms => new Promise(res => setTimeout(res, ms));
-range = [...Array(100000).keys()]
-range
-  .some(async function (range, i) {
-    await delay(i*i+100)
+var waitToCalculate = (async function() {
+  for (var i = 0; i < Number.MAX_SAFE_INTEGER; i++) {
+    await delay(i * i * 100)
     if (typeof math !== "undefined") {
       calcDipoleLength()
       return true
     }
-  })
+  }
+  return true
+}())
 
 //on frequency update, change dipole length
 function calcDipoleLength() {
@@ -69,8 +69,6 @@ function calcDipoleLength() {
   var betaOne = math.subtract(90,math.multiply(90,(math.add(shortenAmount,coilFeedpointDistance))))
   var betaTwo = math.subtract(90,math.multiply(math.bignumber(90),coilFeedpointDistance))
   var impedanceZero = math.round(math.multiply(math.bignumber(138),math.log10(math.divide(math.multiply(4,electricalHeight),math.divide(wireDiameter,math.bignumber(1000))))),5)
-  // var cotOne = math.divide(1,math.tan(math.unit(betaOne,'deg')))
-  // console.log(`cotOne ${cotOne}`)
   var reactanceOne = math.round(math.multiply(-1,math.multiply(impedanceZero,math.cot(math.unit(betaOne,'deg')))),5)
   var reactanceTwo = math.round(math.multiply(-1,math.multiply(impedanceZero,math.cot(math.unit(betaTwo,'deg')))),5)
   var reactanceLoad = math.round(math.subtract(reactanceTwo,reactanceOne),0)
