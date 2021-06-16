@@ -22,14 +22,14 @@ Outer Frequency in MHz (lower frequency)
 
 <input type="text" id="outerFrequency" name="outerFrequency"/>
 
-Normal dipole length (meters):
+Normal dipole length in meters (determined by outer frequency):
 
 <span id="dipoleLengthSpan"></span>
 
 <input type="text" id="dipoleLength" name="dipoleLength" disabled="disabled" readonly hidden/>
 
-Coil distance from feedpoint relative to normal length. Determined by
-outer and inner frequencies:
+Coil distance from feedpoint relative to normal length (determined by
+outer and inner frequencies):
 
 <span id="coilFeedpointDistanceSpan">\\(d_{fromfeedpt} = \\)</span>
 
