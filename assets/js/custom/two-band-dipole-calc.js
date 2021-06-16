@@ -76,6 +76,7 @@ async function updateRequiredFields(event) {
 
 //on frequency update, change dipole length
 async function calcDipoleLength() {
+  updateRequiredFields()
   var outerFrequency = math.bignumber(inputElements.outerFrequency.elem.value)
   var innerFrequency = math.bignumber(inputElements.innerFrequency.elem.value)
   var coilFeedpointDistance = math.bignumber(inputElements.coilFeedpointDistance.elem.value)
