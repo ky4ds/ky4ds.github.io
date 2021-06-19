@@ -64,7 +64,7 @@ easy adjustment of inductance.
 ![drilled-coupler.jpg](/assets/images/drilled-coupler.jpg)
 
 Then, I wind the inductor and add 2-3 more turns of wire than you've
-estimated. Later we must "tune" the inductor and it is easier to remove
+estimated. Later I must "tune" the inductor and it is easier to remove
 wire than to add it.
 
 ![wound-coil.jpg](/assets/images/wound-coil.jpg)
@@ -120,9 +120,8 @@ antenna later.
 ![copper-lug.jpg](/assets/images/copper-lugs.jpg)
 
 It can take some time to get the turns right and to "tune" your trap to
-resonance. Fortunately, the second trap is quite easy to build by
-copying what you did for the first. Remember that we do not need
-perfectly resonant traps.
+resonance. Fortunately, it's very easy to build the second trap by
+copying the first. Remember, I do not need perfectly resonant traps.
 
 However, you might not have such an easy time if you try to wind your
 traps with magnet wire and wind up with this:
