@@ -145,6 +145,7 @@ To design a two-band trapped dipole, with loading on the lower band:
       capacitance, which results in less inductance, which results in
       less loading. If you want more loading, then 33pF would be a
       better choice.
+    * TODO: move to separate post and trim this section
 6. **Recalculate inductance based on the sourcable capacitance.**
     
     $$L = \frac {1} {(2πf)^2C} = \frac {1} {(2π18.118MHz)^2*40pF} =
@@ -231,8 +232,11 @@ capacitance.
 
 ## Trap construction
 
-TBA
+See my post on [trap construction][trap-construction]
 
+## Assembly and tuning
+
+TBA
 
 [K1PLP]: https://dxc.wc2l.com/QST_Sep_1974_p28-34_58.pdf
 [w8ij]: https://www.w8ji.com/traps.htm
@@ -244,6 +248,5 @@ TBA
 [66pacific]: https://66pacific.com
 [CT1EOJ]: http://p1k.arrl.org/pubs_archive/104832
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
-
-
 [calculator]: {% post_url 2021-06-16-two-band-trapped-dipole-calculator %}
+[trap-construction]: {% post_url 2021-06-18-dipole-trap-construction %}

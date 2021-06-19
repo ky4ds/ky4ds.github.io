@@ -8,6 +8,18 @@ categories: trap-dipole
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="/assets/js/npm/mathjax/es5/tex-mml-chtml.js"></script>
 
+[TOC levels=2,4]: #
+
+# Table of Contents
+- [Materials required](#materials-required)
+- [How I build traps](#how-i-build-traps)
+    - [Calculate initial coil dimensions](#calculate-initial-coil-dimensions)
+    - [Build air-coil with pvc coupler](#build-air-coil-with-pvc-coupler)
+- [Resonance measurements](#resonance-measurements)
+    - [Channel 1 signal loss](#channel-1-signal-loss)
+    - [VNA as a "grid-dip" meter](#vna-as-a-grid-dip-meter)
+
+
 I construct loading coils by winding RF David Flexweave insulated
 antenna wire around PVC couplers. Magnet wire is cheaper and can be
 wound into tight coils for higher inductance, but flex weave requires
@@ -70,7 +82,7 @@ measuring trap resonance with a Nano VNA).
 Now, I "tune" the inductor for trap resonance. The relationship between
 resonant frequency and inductance is inverse:
 
-$$ f_{resonance} = \frac 1 {2π\sqrt LC}$$
+$$ f_{resonance} = \frac 1 {2π\sqrt {LC}}$$
 
 So if resonance is low, inductance is too high and our coil must be
 shortened and if resonance is too high, inductance is too low and our
@@ -82,8 +94,8 @@ For this trap, I want resonance close to 18.118MHz. 18.960MHz might be a
 bit too high (see notes from W8IJ below), which means I must now cut a
 new, longer piece of wire and start over.
 
-Instead, I'll press the windings closer together to literally squeeze a
-bit more inductance out of this coil :)
+Instead, I'll cheat. By pressing the windings closer together, I can
+literally squeeze a bit more inductance out of this coil :)
 
 ![lc-resonance-2.jpg](/assets/images/lc-resonance-2.jpg)
 
@@ -94,12 +106,36 @@ are perfectly resonant. In fact, it's possible that the 18.960MHz
 resonance will work just as well.
 
 This is good news for me, since perfectly resonant traps would require
-perfectly wound coils, which I don't find practical.
+perfectly wound coils. Tuning for resonance within 500KHz is hard
+enough.
 
 Finally crimp leads onto the inductor and capacitor leads and screw them
 together with the copper lugs.
 
 ![finished-trap.jpg](/assets/images/finished-trap.jpg)
+
+With these copper lugs, I will have a much easier time assembling the
+antenna later.
+
+![copper-lug.jpg](/assets/images/copper-lugs.jpg)
+
+It can take some time to get the turns right and to "tune" your trap to
+resonance. Fortunately, the second trap is quite easy to build by
+copying what you did for the first. Remember that we do not need
+perfectly resonant traps.
+
+However, you might not have such an easy time if you try to wind your
+traps with magnet wire and wind up with this:
+
+![magnet-wire-trap.jpg](/assets/images/magnet-wire-trap.jpg)
+
+Spaces between windings (hard to avoid with magnet wire) will lower
+inductance in a way that is hard to reproduce. It's true that spaces
+between windings increases Q and lowers loss. However it is much easier
+(using flexweave) to produce coils with consistent inductance with
+tighter windings.
+
+If you want to go cheaper, give speaker wire a shot.
 
 ## Resonance measurements
 
