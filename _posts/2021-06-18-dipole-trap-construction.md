@@ -118,7 +118,8 @@ This method requires a two port VNA.
 ### VNA as a "grid-dip" meter
 
 With a single port analyzer, I can run a loop from the center pin
-conductor to ground and observe `CH0 SWR`.
+conductor to ground, without making any other electrical connections,
+and observe `CH0 SWR`.
 
 ![grid-dip-1.jpg](/assets/images/grid-dip-1.jpg)
 
