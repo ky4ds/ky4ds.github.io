@@ -154,10 +154,14 @@ shortened antenna: ((\X_L\\).
     * \\(X_L = -j2385 - (-j2763)\\)
     * \\(X_L = 378Ω\\)
 
-TODO: check math
+#### WARNING
 
-TODO: ask ARRL for permission to repost "Designing a Shortened Antenna"
-by Luiz Duarte Lopes, CT1EOJ, QST Oct 2003.
+This example gives us the wrong answer for a 17m/20m dipole, b/c it uses
+the general band lengths as inputs to \\(X_L\\). Instead, we must select
+resonant frequencies. For example, instead of 20m, we should select
+14.150MHz. And instead of 17m, we should select 18.118MHz.
+
+TODO: demonstrate using frequencies
 
 ## Comparison
 
