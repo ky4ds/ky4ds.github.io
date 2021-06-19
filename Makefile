@@ -19,8 +19,7 @@ install-gems:
 install: install-js install-gems
 
 s serve: install
-	bundle exec jekyll serve
-	bundle exec jekyll serve --trace --livereload
+	bundle exec jekyll serve --trace --livereload --drafts
 
 build:
 	JEKYLL_ENV=production bundle exec jekyll build --trace

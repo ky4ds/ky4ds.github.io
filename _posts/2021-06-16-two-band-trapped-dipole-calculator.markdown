@@ -2,7 +2,7 @@
 layout: post
 title:  "Two Band Trapped Dipole Calculator"
 date:   2021-06-16 08:33:00 -0400
-categories: jekyll update
+categories: trap-dipole
 ---
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

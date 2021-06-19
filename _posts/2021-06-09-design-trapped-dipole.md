@@ -2,7 +2,7 @@
 layout: post
 title:  "Design a Trapped Dipole for Length"
 date:   2021-06-09 00:40:00 -0400
-categories: jekyll update
+categories: trap-dipole
 ---
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -11,19 +11,14 @@ categories: jekyll update
 [TOC levels=2,4]: #
 
 # Table of Contents
+- [Trap dipole basics](#trap-dipole-basics)
 - [Design overview](#design-overview)
-    - [Basic process](#basic-process)
-    - [Determining inductive reactance](#determining-inductive-reactance)
+    - [Do the math](#do-the-math)
+    - [Determine inductive reactance](#determine-inductive-reactance)
     - [Another example: 10m/20m trapped and loaded dipole](#another-example-10m20m-trapped-and-loaded-dipole)
     - [Repeat for additional bands](#repeat-for-additional-bands)
+- [Calculator tool](#calculator-tool)
 - [Trap construction](#trap-construction)
-    - [Measure inductance](#measure-inductance)
-        - [Method A: Use LCR meter](#method-a-use-lcr-meter)
-        - [Method B: Use Nano VNA](#method-b-use-nano-vna)
-    - [Measure resonance](#measure-resonance)
-        - [Method A: Antenna analyzer as a grid-dip meter](#method-a-antenna-analyzer-as-a-grid-dip-meter)
-        - [Method B: Use ports 1 and 2 on a Nano VNA](#method-b-use-ports-1-and-2-on-a-nano-vna)
-    - [Close enough resonance](#close-enough-resonance)
 
 I have 50 feet of room for an antenna at my QTH. I've tried endfed
 halfwaves, random wires and fan dipoles and for various reasons, none of
@@ -38,9 +33,42 @@ I've recently obtained my Extra license and while studying for the test,
 realized that I had absorbed enough math to design a multiband trap
 dipole for my length requirements.
 
+## Trap dipole basics
+
+Parallel LC traps (circuits including an inductor and capacitor in
+series) can be used to build dipoles resonant on multiple bands. The
+bands do not have to be harmonically related, nor is a tuner required.
+
+Suppose you wanted to build a two band dipole, for 20m and 40m. You'd
+start with a basic dipole for 20m, install traps at both ends of the
+dipole, then extend the dipole with more wire until resonant on 40m. The
+20m section (the inner section) of the dipole will stay resonant because
+the traps will contain RF within the 20m segment, when your frequency is
+on the 20m band. This happens because the LC circuit is resonant on the
+20m band and this trap resonance blocks the passage of RF on 20m.
+
+On any other band, the LC circuit will not function as traps and the RF
+will pass through. Instead of functioning as a trap for 40m (the outer
+section), the LC circuit will function as an inductor, causing the
+antenna to physically shorten. This means that the total length for the
+dipole will be less than a dipole resonant for just 40m.
+
+How much less is dependent on how much inductance: more inductance will
+shorten the antenna more; less inductance will shorten the antenna less.
+
+You can construct traps from a range of inductance. There is no single
+fixed value of inductance which is required to resonate the trap on the
+band of interest. What matters is the ratio of inductance to
+capacitance. If your trap contains more inductance, it must contain less
+capacitance. For less inductance, you must increase capacitance.
+
+So, if we wanted to create a trapped dipole with a specific amount of
+shortening, our inductance will be determined for us. We can then use
+some basic formulas to calculate the capacitance necessary for our trap.
+
 ## Design overview
 
-### Basic process
+### Do the math
 
 To design a two-band trapped dipole, with loading on the lower band:
 
@@ -49,21 +77,8 @@ To design a two-band trapped dipole, with loading on the lower band:
 3. **Determine how much loading (shortening) is required for the lower
    band.**
     * Since my antenna was to be a full length on 17m, which is 85% the
-      length of 20m, I wanted as little shortening as possible.
-    * $${Dim_A} = \text{shortened length of dipole}$$<br />
-        
-        $${Dim_A} = 98\%$$
-        
-    * $${Dim_B} = \text{trap distance from feedpoint (on shortened antenna)}$$<br />
-        * our traps will be located at the end of the inner band, 17m
-        
-        $${Dim_B} = \frac {\text{length of inner band}} {\text{length of
-        outer band}* {Dim_A}} = \frac {17m} {20m * 0.98} \approx 87\%$$
-      
-    * These two values give me an inductive reactance of 250 ohms (will
-      discuss
-      [determining inductive reactance](#determining-inductive-reactance)
-      later):
+      length of 20m, I wanted as little shortening as possible (I will
+      discuss determining inductive reactance later):
       
         $$X_L = 250Ω$$
         
@@ -103,10 +118,10 @@ To design a two-band trapped dipole, with loading on the lower band:
     
     $$C = \frac {1} {(2π18.118MHz)^2.196μH} = 35.235pF$$
     
-6. **Revise capacitance based on what can be sourced.** We can roll our
-   own inductors from wire wound on pvc couplers, but since I do not
-   want to homebrew my own high-voltage capacitors, there seem to be two
-   affordable options:
+5. **Revise capacitance based on what can be sourced.** We can roll our
+   own inductors from wire wound on pvc couplers, but we will need to
+   purchase fixed-value capacitors. Since I do not want to homebrew my
+   own high-voltage capacitors, there seem to be two affordable options:
     * Surplus Soviet transmitting equipment on EBay (my preference).
       These are large "ceramic" doorknob capacitors. These can be found
       by running a search for [K15Y capacitor on ebay][ebay]. I've had
@@ -123,9 +138,14 @@ To design a two-band trapped dipole, with loading on the lower band:
     * 3 $$120pF$$ capacitors in series leaves us with a trap capacitance
       of $$40pF$$, which is probably close enough.
     
-        $${C_{initial}} = 35.235pF \approx {C_{sourcable}} \approx 40pF
-        $$
-7. **Recalculate inductance based on the sourcable capacitance.**
+        $${C_{initial}} = 35.235pF \approx {C_{sourcable}} = 40pF $$
+        
+    * Note that we also could have chosen 33pF, since that is commonly
+      available. Since we want less loading, we chose a higher
+      capacitance, which results in less inductance, which results in
+      less loading. If you want more loading, then 33pF would be a
+      better choice.
+6. **Recalculate inductance based on the sourcable capacitance.**
     
     $$L = \frac {1} {(2πf)^2C} = \frac {1} {(2π18.118MHz)^2*40pF} =
     1.929μH $$
@@ -141,7 +161,7 @@ Our two-band 17m and 20m dipole (with very little loading on 20m) will
 require two parallel circuit traps with a capacitance of \\(40pF\\) and
 inductance of \\(1.929μH\\).
 
-### Determining inductive reactance
+### Determine inductive reactance
 
 Based on how long we want our antenna to be (how much we want to
 shorten), which bands we use (which determines trap/coil placement), we
@@ -197,25 +217,22 @@ For example, adding 30m to the 10m/20m dipole and shortening by 20%:
     * as per K1PLP's chart
 * Calculate \\(L\\) and \\(C\\), repeating process above.
 
+Using this process, I have successfully designed and constructed a
+working 4 band trap dipole, for 40m, 30m, 20m and 17m. The total length
+was between 45 and 50 feet long.
+
+## Calculator tool
+
+I've published a [calculator][calculator] to assist with design. You input the
+frequencies of two bands, the amount you want to shorten the overall
+antenna, and a few other parameters, and the tool will calculate the
+inductive reactance of your coils/traps, coil inductance and trap
+capacitance.
+
 ## Trap construction
 
 TBA
 
-### Measure inductance
-
-#### Method A: Use LCR meter
-
-#### Method B: Use Nano VNA
-
-### Measure resonance
-
-#### Method A: Antenna analyzer as a grid-dip meter
-
-#### Method B: Use ports 1 and 2 on a Nano VNA
-
-### Close enough resonance
-
-As per W8IJ... TBA
 
 [K1PLP]: https://dxc.wc2l.com/QST_Sep_1974_p28-34_58.pdf
 [w8ij]: https://www.w8ji.com/traps.htm
@@ -227,3 +244,6 @@ As per W8IJ... TBA
 [66pacific]: https://66pacific.com
 [CT1EOJ]: http://p1k.arrl.org/pubs_archive/104832
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
+
+
+[calculator]: {% post_url 2021-06-16-two-band-trapped-dipole-calculator %}
