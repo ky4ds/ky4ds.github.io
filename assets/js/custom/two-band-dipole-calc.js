@@ -67,7 +67,7 @@ async function updateRequiredFields() {
   //calculate dipole length before calculating
   var dipoleLength = math.round(math.evaluate(`143 / ${outerFrequency}`),2)
   inputElements.dipoleLength.elem.value = dipoleLength
-  document.getElementById("dipoleLengthSpan").textContent = `\\(l_{coil} = \\) ${dipoleLength.toString()}m`
+  document.getElementById("dipoleLengthSpan").textContent = `\\(l_{full} = \\) ${dipoleLength.toString()}m`
 	
   //calculate coil distance
   var coilFeedpointDistance = math.round(math.evaluate(`${outerFrequency} / ${innerFrequency}`),4)
