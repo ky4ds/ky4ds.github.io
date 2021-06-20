@@ -43,6 +43,8 @@ Shortened length of dipole:
 
 <span id="shortenedLength">\\(l_{shortened} = \\)</span>
 
+Length removed from shortened dipole:
+
 <span id="lengthRemoved">\\(l_{removed} = \\)</span>
 
 Wire diameter (in mm, see [awg chart][wikip_awg]):
