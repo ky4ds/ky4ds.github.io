@@ -29,7 +29,7 @@ Normal dipole length in meters (determined by outer frequency):
 <input type="text" id="dipoleLength" name="dipoleLength" disabled="disabled" readonly hidden/>
 
 Coil distance from feedpoint relative to normal length (determined by
-outer and inner frequencies):
+inner frequency):
 
 <span id="coilFeedpointDistanceSpan">\\(d_{fromfeedpt} = \\)</span>
 
