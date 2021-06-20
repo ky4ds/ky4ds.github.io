@@ -27,8 +27,9 @@ var inputElements = Object.entries(inputIdsDefaultValues)
     element.addEventListener("keyup", function(event) {
       if (event.key === "Enter") {
         event.preventDefault();
-        document.getElementById("calculate").click();
-        calcDipoleLength()
+        event.stopImmediatePropagation();
+        //document.getElementById("calculate").click();
+        calcDipoleLength(event)
       }
     });
     
@@ -41,6 +42,7 @@ var inputElements = Object.entries(inputIdsDefaultValues)
 
 inputElements.innerFrequency.elem.addEventListener("focusout", updateRequiredFields)
 inputElements.outerFrequency.elem.addEventListener("focusout", updateRequiredFields)
+inputElements.shortenAmount.elem.addEventListener("focusout", updateShortenedDipole)
 
 //wait for math lib to load
 const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -50,6 +52,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
     if (typeof math !== "undefined" && typeof MathJax !== "undefined" ) {
       calcDipoleLength()
       updateRequiredFields()
+	    updateShortenedDipole()
       return true
     }
   }
@@ -58,7 +61,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 console.log('fin')
 
-async function updateRequiredFields(event) {
+async function updateRequiredFields() {
   var outerFrequency = inputElements.outerFrequency.elem.value
   var innerFrequency = inputElements.innerFrequency.elem.value
   //calculate dipole length before calculating
@@ -74,9 +77,21 @@ async function updateRequiredFields(event) {
   MathJax.typeset()
 }
 
+async function updateShortenedDipole(event) {
+  var outerFrequency = inputElements.outerFrequency.elem.value
+  var shortenAmount = inputElements.shortenAmount.elem.value
+  var lengthShortened = math.round(math.evaluate(`143 / ${outerFrequency} * (1 - ${shortenAmount})`),2)
+  var lengthRemoved = math.round(math.evaluate(`143 / ${outerFrequency} * ${shortenAmount}`),2)
+  document.getElementById("shortenedLength").textContent = `\\(l_{shortened} = \\) ${(lengthShortened).toString()}m`
+  document.getElementById("lengthRemoved").textContent = `\\(l_{removed} = \\) ${(lengthRemoved).toString()}m`
+  
+    MathJax.typeset()
+}
+
 //on frequency update, change dipole length
 async function calcDipoleLength() {
   updateRequiredFields()
+	updateShortenedDipole()
   var outerFrequency = math.bignumber(inputElements.outerFrequency.elem.value)
   var innerFrequency = math.bignumber(inputElements.innerFrequency.elem.value)
   var coilFeedpointDistance = math.bignumber(inputElements.coilFeedpointDistance.elem.value)

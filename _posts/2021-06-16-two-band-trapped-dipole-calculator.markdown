@@ -39,6 +39,12 @@ Amount to shorten (decimal percentage):
 
 <input type="text" id="shortenAmount" name="shortenAmount"/>
 
+Shortened length of dipole:
+
+<span id="shortenedLength">\\(l_{shortened} = \\)</span>
+
+<span id="lengthRemoved">\\(l_{removed} = \\)</span>
+
 Wire diameter (in mm, see [awg chart][wikip_awg]):
 
 <input type="text" id="wireDiameter" name="wireDiameter"/>

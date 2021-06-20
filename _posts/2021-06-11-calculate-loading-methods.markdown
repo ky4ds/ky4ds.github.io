@@ -161,7 +161,7 @@ the general band lengths as inputs to \\(X_L\\). Instead, we must select
 resonant frequencies. For example, instead of 20m, we should select
 14.150MHz. And instead of 17m, we should select 18.118MHz.
 
-TODO: demonstrate using frequencies
+Instructions for TODO: demonstrate using frequencies
 
 ## Comparison
 
