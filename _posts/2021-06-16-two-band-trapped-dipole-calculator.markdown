@@ -69,9 +69,9 @@ Trap capacitance, <span id="trapCapacitance">\\(C_{trap} = \\)</span>
 
 ## Caveat
 
-I have not yet built an antenna using these exact values, however these
-values are close to alternative calculations I've done while designing
-and building my first trap dipole (which was successful).
+I have not yet built an antenna using this tool, however these values
+are close to alternative calculations I've done while designing and
+building my first trap dipole (which was successful).
 
 ## Notes
 
