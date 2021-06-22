@@ -110,7 +110,8 @@ perfectly wound coils. Tuning for resonance within 500KHz is hard
 enough.
 
 Finally crimp leads onto the inductor and capacitor leads and screw them
-together with the copper lugs.
+together with the copper lugs. By keeping the inductor leads shorter,
+tension will be applied to the PVC (instead of the capacitor).
 
 ![finished-trap.jpg](/assets/images/finished-trap.jpg)
 
