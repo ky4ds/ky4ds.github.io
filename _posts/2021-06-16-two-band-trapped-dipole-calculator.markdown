@@ -113,8 +113,9 @@ inductance.
 
 ## Further information
 
-See [trap dipole design][design], [trap construction][construction]
-and [loading coil calculation methods][calc_coils].
+* [trap dipole design][design]
+* [trap construction][construction]
+* [loading coil calculation methods][calc_coils]
 
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
 [wikip_awg]: https://en.wikipedia.org/wiki/American_wire_gauge#Tables_of_AWG_wire_sizes

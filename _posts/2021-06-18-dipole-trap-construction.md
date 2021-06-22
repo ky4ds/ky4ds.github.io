@@ -114,8 +114,8 @@ together with the copper lugs.
 
 ![finished-trap.jpg](/assets/images/finished-trap.jpg)
 
-With these copper lugs, I will have a much easier time assembling the
-antenna later.
+With these copper lugs, I will have a much easier time assembling and
+tuning the antenna later.
 
 ![copper-lug.jpg](/assets/images/copper-lugs.jpg)
 
@@ -134,7 +134,7 @@ between windings increases Q and lowers loss. However it is much easier
 (using flexweave) to produce coils with consistent inductance with
 tighter windings.
 
-If you want to go cheaper, give speaker wire a shot.
+Try speaker wire if you want to go cheaper.
 
 ## Resonance measurements
 
