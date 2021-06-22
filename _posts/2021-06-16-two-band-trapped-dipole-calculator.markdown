@@ -14,11 +14,11 @@ This is a calculator to assist with designing a two band shortened trap
 dipole. Prefilled values are for a 17/20m trapped dipole, with
 loading removing only 2% of antenna length.
 
-Inner Frequency in MHz (higher frequency)
+Inner Frequency in MHz (trapped, higher frequency)
 
 <input type="text" id="innerFrequency" name="innerFrequency"/>
 
-Outer Frequency in MHz (lower frequency)
+Outer Frequency in MHz (untrapped, lower frequency)
 
 <input type="text" id="outerFrequency" name="outerFrequency"/>
 
@@ -92,7 +92,8 @@ However, the proper calculation would have been
 **It is very important to compute the amount to shorten and coil
 distance and as accurately as possible**, since these inputs can produce
 wide swings in inductive reactance, \\(X_L\\). Do not just go by band
-meters! Instead, calculate precise values from exact frequencies.
+meters! For this tool, that means entering precise frequencies to
+calculate accurate values.
 
 As explained by CT1EOJ, the electrical height is difficult to measure.
 Electrical height and wire diameter are inputs to the antenna wire
