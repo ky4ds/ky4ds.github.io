@@ -121,36 +121,20 @@ To design a two-band trapped dipole, with loading on the lower band:
     
 5. **Revise capacitance based on what can be sourced.** We can roll our
    own inductors from wire wound on pvc couplers, but we will need to
-   purchase fixed-value capacitors. Since I do not want to homebrew my
-   own high-voltage capacitors, there seem to be two affordable options:
-    * Surplus Soviet transmitting equipment on EBay (my preference).
-      These are large "ceramic" doorknob capacitors. These can be found
-      by running a search for [K15Y capacitor on ebay][ebay]. I've had
-      good results with 3.5kV rated doorknob capacitors.
-        * 2 K15Y doorknob capacitors will cost between $5 and $10,
-          before shipping.
-    * Parallel silver mica capacitors. I haven't tried this, but it
-      seems that 3 [$$120pF$$ 1kV silver mica capacitors][mouser] in
-      series will provide a sufficient voltage rating for our antenna.
-      Three of these capacitors in series will have three times the
-      voltage rating and one third the capacitance of each capacitor.
-        * At $1.60 each, 6 capacitors for a pair of traps will cost
-          $9.60, before tax and shipping.
-    * 3 $$120pF$$ capacitors in series leaves us with a trap capacitance
-      of $$40pF$$, which is probably close enough.
+   purchase fixed-value capacitors. Unfortunately, \\(35.235pF\\) is not
+   a commonly available capacitance. \\(40pF\\) is easier to source
+   (with silver mica caps in serial), so we'll use that:
     
-        $${C_{initial}} = 35.235pF \approx {C_{sourcable}} = 40pF $$
-        
-    * Note that we also could have chosen 33pF, since that is commonly
-      available. Since we want less loading, we chose a higher
-      capacitance, which results in less inductance, which results in
-      less loading. If you want more loading, then 33pF would be a
-      better choice.
-    * TODO: move to separate post and trim this section
+    $${C_{initial}} = 35.235pF \approx {C_{sourcable}} = 40pF $$
+    
+    * 33pF is also available, but since I want less loading, higher
+      capacitance is preferable, allowing for less inductance (resulting
+      in less loading/shortening). If I need more loading, then 33pF
+      would be a better choice.
+    * See my [post on sourcing high voltage capacitors][hv-caps].
 6. **Recalculate inductance based on the sourcable capacitance.**
     
-    $$L = \frac {1} {(2πf)^2C} = \frac {1} {(2π18.118MHz)^2*40pF} =
-    1.929μH $$
+    $$L = \frac {1} {(2πf)^2C} = \frac {1} {(2π18.118MHz)^2*40pF} = 1.929μH $$
 
 Altogether, we have:
 
@@ -251,3 +235,4 @@ TBA
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
 [calculator]: {% post_url 2021-06-16-two-band-trapped-dipole-calculator %}
 [trap-construction]: {% post_url 2021-06-18-dipole-trap-construction %}
+[hv-caps]: {% post_url 2021-06-21-high-voltage-capacitors %}

@@ -69,28 +69,19 @@ Trap capacitance, <span id="trapCapacitance">\\(C_{trap} = \\)</span>
 
 ## Caveat
 
-I have not yet built an antenna using these values, however these values
-agree with alternative calculations I've done while designing and
-building my first trap dipole.
+I have not yet built an antenna using these exact values, however these
+values are close to alternative calculations I've done while designing
+and building my first trap dipole (which was successful).
 
 ## Notes
 
-As explained by CT1EOJ, the electrical height is difficult to measure.
-For a 17m trap functioning as a load on 20m, this method gave me a
-inductive reactance, \\(X-L\\), of 63Ω (14 awg and electrical height of
-20ft). After building this calculator and trying different electrical
-heights, the coil inductance doesn't seem to be too sensitive, even with
-wild swings in electrical height.
-
 When I built my trapped 17m/20m trapped dipole with \\(X-L = 200Ω\\),
-the 20m section was less than half the length I expected it to be. That
-means my inductance, and therefore my inductive reactance, was too high
-and should have been lower. However this calculator gives a \\(X-L\\) of
-over 200Ω for almost all combinations of wire diameter and electrical
-height, when I should have expected less.
+the 20m section was much shorter than I expected. That means my
+inductance, and therefore my inductive reactance, was too high and
+should have been lower.
 
-Turns out my reactance was too high because I overshot the coil distance
-from feedpoint. I calculated
+It turns out my reactance was too high because I overshot the coil
+distance from feedpoint. I calculated
 
 \\(17m/20m = 85\%\\)
 
@@ -103,13 +94,13 @@ distance and as accurately as possible**, since these inputs can produce
 wide swings in inductive reactance, \\(X_L\\). Do not just go by band
 meters! Instead, calculate precise values from exact frequencies.
 
+As explained by CT1EOJ, the electrical height is difficult to measure.
 Electrical height and wire diameter are inputs to the antenna wire
-impedance, \\(Z_0\\). My intuition is that the Nano VNA can take an
-accurate measurement of the antenna wire's characteristic impedance.
-This would allow for more accuracy using this calculator. I will update
-this page if I find out how to do that. However, neither wire diameter,
-nor electrical height seem to have too much impact on the final coil
-inductance.
+characteristic impedance, \\(Z_0\\). My intuition is that the Nano VNA
+can accurately measure \\(Z_0\\). This would allow for more accuracy
+using this calculator. I will update this page if I find out how to do
+that. Regardless, neither wire diameter, nor electrical height seem to
+have much impact on the final coil inductance.
 
 ## Further information
 

@@ -124,16 +124,15 @@ It can take some time to get the turns right and to "tune" your trap to
 resonance. Fortunately, it's very easy to build the second trap by
 copying the first. Remember, I do not need perfectly resonant traps.
 
-However, you might not have such an easy time if you try to wind your
-traps with magnet wire and wind up with this:
+However, you might not have an easy time reproducing the same resonance
+if you wind your traps with magnet wire and get this:
 
 ![magnet-wire-trap.jpg](/assets/images/magnet-wire-trap.jpg)
 
 Spaces between windings (hard to avoid with magnet wire) will lower
-inductance in a way that is hard to reproduce. It's true that spaces
-between windings increases Q and lowers loss. However it is much easier
-(using flexweave) to produce coils with consistent inductance with
-tighter windings.
+inductance in a way that is hard to reproduce. It's true that winding
+spacing increases Q and lowers loss, but it's much easier to produce
+coils with consistent inductance with tighter windings.
 
 Try speaker wire if you want to go cheaper.
 
