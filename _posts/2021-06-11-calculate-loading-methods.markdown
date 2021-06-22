@@ -39,10 +39,6 @@ I highly recommend ARRL's Antenna Book. Chapter 9 in particular has
 several sections dedicated to dipoles and loading techniques. Here is a
 link for the [full ARRL Antenna Book][antenna_book].
 
-The main issue with this method, and the reason my antenna, once tuned,
-was a bit off from my calculations, is because the lookup chart fails to
-take both wire gauge and antenna height into consideration.
-
 ## Method B: 66Pacific's Online Calculator
 
 The math to calculate inductance, given $${Dim_A}$$ and $${Dim_B}$$ is
@@ -60,23 +56,6 @@ Where:
 
 Fortunately, [66pacific.com][66pacific] has published a
 [utility][coil-dipole-calculator] for this calculation.
-
-<!--One word of caution: it seems that calculator can very highly sensitive-->
-<!--to the total length of antenna in feet. For the 20m dipole, if you-->
-<!--select 31 total feet, coils 13.9 feet from center, 14awg wire, and an-->
-<!--operating frequency of 14Mhz, you get $${9.7μH}$$. For the same values,-->
-<!--but with 32 total feet, the calculator shows $${4.5μH}$$. At 14MHz, this-->
-<!--would correspond to 850Ω for $${9.7μH}$$ and 395Ω!-->
-
-<!--IMO, these calculations are too sensitive and our design needs more-->
-<!--fault tolerance than this; the doorknob caps may only be rated for 20%-->
-<!--accuracy, and the homebrew coils can be a pain to wind to a precise-->
-<!--inductance.-->
-
-<!--Rather, I would recommend doing the math and looking up $$X_L$$ from the-->
-<!--ARRL chart. It may be challenging to wind inductors for the exact value-->
-<!--of your calculation and knowing the reactance will make it easier to see-->
-<!--whether your traps are close enough or not.-->
 
 ## Method C: Calculate \\(X_L\\) from \\(Dim_A\\) and \\(Dim_B\\)
 
@@ -159,16 +138,38 @@ shortened antenna: ((\X_L\\).
 This example gives us the wrong answer for a 17m/20m dipole, b/c it uses
 the general band lengths as inputs to \\(X_L\\). Instead, we must select
 resonant frequencies. For example, instead of 20m, we should select
-14.150MHz. And instead of 17m, we should select 18.118MHz.
+14.055MHz. And instead of 17m, we should select 18.118MHz.
 
-Instructions for TODO: demonstrate using frequencies
+See [my calculator][two-band-calc] for an example. Calculating using
+resonant frequencies, 18.118MHz and 14.055MHz gives an \\(X_L\\) of
+166Ω.
 
 ## Comparison
 
-TBA
+It's helpful to see the inductive reactance, \\(X_L\\), from which you
+then calculate inductance. \\(X_L\\) is frequency independent, while
+\\(L\\), inductance, is frequency dependent. Both K1PLP's chart (method
+1) and CT1EOJ's calculations (Method 2) provider inductive reactance,
+while 66paficic's calculator, based on K1PLP's calculations, does not.
+
+I have only attempted trap dipole design and construction using K1PLP's
+lookup chart. I can also verify that Method 3 produces reactance values
+similar to Method 1. 66pacific's calculator (Method 2) produces
+reactance values that are a bit off from my calculations and it's
+difficult to evaluate the math, since their calculator only provides
+inductance and skips over reactance.
+
+Method 3's main difficulty is with calculating \\(β_1\\) and \\(β_2\\)
+since the geometry can be tricky to get right.
+
+Method 1 is just a lookup chart, which seems accurate enough. But when
+dealing with extreme inductances/capacitances (at the extremes of low or
+high inductances), small errors can produce unacceptable deviations in
+antenna dimensions.
 
 [antenna_book_vol2]: https://amzn.to/2TYz4Xj
 [antenna_book]: https://amzn.to/3wgernK
 [coil-dipole-calculator]: https://www.66pacific.com/calculators/coil-shortened-dipole-antenna-calculator.aspx
 [66pacific]: https://66pacific.com
 [CT1EOJ]: http://p1k.arrl.org/pubs_archive/104832
+[two-band-calc]: {% post_url 2021-06-16-two-band-trapped-dipole-calculator %}

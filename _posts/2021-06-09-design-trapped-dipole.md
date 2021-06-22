@@ -19,6 +19,7 @@ categories: trap-dipole
     - [Repeat for additional bands](#repeat-for-additional-bands)
 - [Calculator tool](#calculator-tool)
 - [Trap construction](#trap-construction)
+- [Assembly and tuning](#assembly-and-tuning)
 
 I have 50 feet of room for an antenna at my QTH. I've tried endfed
 halfwaves, random wires and fan dipoles and for various reasons, none of
