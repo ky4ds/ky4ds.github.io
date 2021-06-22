@@ -104,9 +104,9 @@ have much impact on the final coil inductance.
 
 ## Further information
 
-* [trap dipole design][design]
-* [trap construction][construction]
-* [loading coil calculation methods][calc_coils]
+* [Trap construction][construction]
+* [Trap dipole design][design]
+* [Loading coil calculation methods][calc_coils]
 
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
 [wikip_awg]: https://en.wikipedia.org/wiki/American_wire_gauge#Tables_of_AWG_wire_sizes

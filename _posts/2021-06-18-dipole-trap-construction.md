@@ -36,12 +36,12 @@ dipole][designing-trapped-dipole] for context.
 
 * PVC Couplers
 * Insulated wire
-* High voltage capacitor
-* Ring terminals + crimper
+* High voltage capacitors
+* Ring terminals + crimp tool
 * [Mechanical copper lugs][copper-lug]
 * Nano VNA
-* LCR Meter
-    * nice to measure inductance during construction, but not necessary
+* Screws and nuts
+    * I used 12AWG ring terminals, 14AWG lugs and M8 screws.
 
 ## How I build traps
 
@@ -52,9 +52,9 @@ used as dipole traps.
 
 66pacific.com has a nice [online tool][66pacific-calculator] which
 performs this calculation. Unless I'm lucky, this will only give me a
-starting point for your coil. Since I use fixed-value capacitors, I need
-to adjust the inductance higher or lower in order to make our trap
-resonant on the higher frequency band.
+starting point for your coil. Since I use fixed-value capacitors, I'll
+need to compensate by adjusting the inductance higher or lower in order
+to make our trap resonant on the higher frequency band.
 
 ### Build air-coil with pvc coupler
 
@@ -63,7 +63,7 @@ easy adjustment of inductance.
 
 ![drilled-coupler.jpg](/assets/images/drilled-coupler.jpg)
 
-Then, I wind the inductor and add 2-3 more turns of wire than you've
+Then, I wind the inductor and add 2-3 more turns of wire than I've
 estimated. Later I must "tune" the inductor and it is easier to remove
 wire than to add it.
 
@@ -91,8 +91,9 @@ wire must be lengthend.
 ![lc-resonance.jpg](/assets/images/lc-resonance-1.jpg)
 
 For this trap, I want resonance close to 18.118MHz. 18.960MHz might be a
-bit too high (see notes from W8IJ below), which means I must now cut a
-new, longer piece of wire and start over.
+bit too high (see notes from W8IJ below). Since I didn't actually start
+with extra turns, I must now cut a new, longer piece of wire and start
+over.
 
 Instead, I'll cheat. By pressing the windings closer together, I can
 literally squeeze a bit more inductance out of this coil :)
@@ -102,8 +103,8 @@ literally squeeze a bit more inductance out of this coil :)
 18.400MHz might not seem close enough, but according to [W8IJ], dipole
 traps do not need perfectly resonant. In fact, it's preferable that
 their resonance be a bit off, since losses are higher with traps that
-are perfectly resonant. In fact, it's possible that the 18.960MHz
-resonance will work just as well.
+are perfectly resonant. In fact, it's possible that resonance at
+18.960MHz will work just as well.
 
 This is good news for me, since perfectly resonant traps would require
 perfectly wound coils. Tuning for resonance within 500KHz is hard
@@ -134,7 +135,7 @@ inductance in a way that is hard to reproduce. It's true that winding
 spacing increases Q and lowers loss, but it's much easier to produce
 coils with consistent inductance with tighter windings.
 
-Try speaker wire if you want to go cheaper.
+If I want to go cheaper next time, I'll try speaker wire.
 
 ## Resonance measurements
 
@@ -144,9 +145,11 @@ I know of two methods, using a Nano VNA, to measure trap resonance.
 
 Shown above, I connect the trap to the center-pins of Channel 0 and
 Channel 1 on my Nano VNA. I'm interested in the `CH1 LOGMAG` graph.
-Since traps inhibit frequency at resonance, I am looking for a sharp
+Since traps inhibit RF at frequency resonance, I am looking for a sharp
 drop in signal strength. That's exactly what I find: -39dB of signal
 strength loss at 18.400MHz.
+
+![lc-resonance-2.jpg](/assets/images/lc-resonance-2.jpg)
 
 This method requires a two port VNA.
 
