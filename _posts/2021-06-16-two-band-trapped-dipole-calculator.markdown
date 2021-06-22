@@ -98,11 +98,10 @@ However, the proper calculation would have been
 
 \\( \frac {143} {18.118MHz} ÷ \frac {143} {14.055MHz} = 77.58\%\\)
 
-The takeaway is that it is very important to compute the amount to
-shorten and coil distance and as accurately as possible, since these
-inputs produce wide swings in inductive reactance, \\(X_L\\). Do not
-just use the band meters! Instead, calculate precise lengths from
-precise frequencies.
+**It is very important to compute the amount to shorten and coil
+distance and as accurately as possible**, since these inputs can produce
+wide swings in inductive reactance, \\(X_L\\). Do not just go by band
+meters! Instead, calculate precise values from exact frequencies.
 
 Electrical height and wire diameter are inputs to the antenna wire
 impedance, \\(Z_0\\). My intuition is that the Nano VNA can take an
@@ -114,8 +113,11 @@ inductance.
 
 ## Further information
 
-See [post on loading coil calculation methods][calc_coils]
+See [trap dipole design][design], [trap construction][construction]
+and [loading coil calculation methods][calc_coils].
 
 [calc_coils]: {% post_url 2021-06-11-calculate-loading-methods %}
 [wikip_awg]: https://en.wikipedia.org/wiki/American_wire_gauge#Tables_of_AWG_wire_sizes
 [66pacific]: https://www.66pacific.com/calculators/coil-shortened-dipole-antenna-calculator.aspx
+[design]: {% post_url 2021-06-09-design-trapped-dipole %}
+[construction]: {% post_url 2021-06-18-dipole-trap-construction %}
