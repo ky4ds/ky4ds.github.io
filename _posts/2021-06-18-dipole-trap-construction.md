@@ -21,10 +21,10 @@ categories: trap-dipole
 
 
 I construct loading coils by winding RF David Flexweave insulated
-antenna wire around PVC couplers. Magnet wire is cheaper and can be
+antenna wire around PVC couplers. Magnet wire may be cheaper and can be
 wound into tight coils for higher inductance, but flex weave requires
-far less strength and the result is a neater coil. The coils are wound
-with 14awg.
+far less strength, and the result is a neater coil (easier to
+reproduce). I generally wind the coils with 14awg.
 
 Speaker wire is a cheaper option for winding coils and should be about
 as easy to work with as flex weave.
@@ -37,6 +37,7 @@ dipole][designing-trapped-dipole] for context.
 * PVC Couplers
 * Insulated wire
 * High voltage capacitors
+    * see [post on where to get these][hv-caps]
 * Ring terminals + crimp tool
 * [Mechanical copper lugs][copper-lug]
 * Nano VNA
@@ -174,3 +175,4 @@ but it'll work.
 [66pacific-calculator]: https://66pacific.com/calculators/coil-inductance-calculator.aspx
 [copper-lug]: https://www.homedepot.com/p/Southwire-14-SOL-STR-8-STR-Mechanical-Terminal-Lug-2-Pack-65180040/312648371
 [W8IJ]: https://www.w8ji.com/traps.htm
+[hv-caps]: {% post_url 2021-06-21-high-voltage-capacitors %}
