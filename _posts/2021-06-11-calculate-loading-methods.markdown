@@ -15,6 +15,7 @@ categories: jekyll update
 - [Method B: 66Pacific's Online Calculator](#method-b-66pacifics-online-calculator)
 - [Method C: Calculate \\(X_L\\) from \\(Dim_A\\) and \\(Dim_B\\)](#method-c-calculate-x_l-from-dim_a-and-dim_b)
     - [Example 1: Loads for a full length 17m/20m trapped dipole](#example-1-loads-for-a-full-length-17m20m-trapped-dipole)
+        - [WARNING](#warning)
 - [Comparison](#comparison)
 
 So far, I've seen three methods for calculating shortening coils for
@@ -24,8 +25,9 @@ results were good, although I intend to build a version 2 of my antenna.
 The 20m section is quite short, while both the 30m and 40m were longer
 than I intended by about a meter or so.
 
-Tentatively, I recommend Method A, however I am researching Method C and
-will update as I test results.
+I haven't technically tried Method C, however I get similar reactance
+values (and subsequently similar inductance and capacitance values) from
+both Method C and A.
 
 ## Method A: K1PLP's Lookup Chart
 
