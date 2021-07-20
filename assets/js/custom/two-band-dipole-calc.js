@@ -133,7 +133,7 @@ async function calcDipoleLength() {
   document.getElementById("loadInductanceSpan").textContent = `\\(L_{load} = \\frac {X_{load}} {2πf_{outer}} = \\frac {${loadReactance}Ω} {{2π${outerFrequency}MHz}} = \\) ${trapInductance.toString()}μH`
   document.getElementById("trapInductanceSpan").textContent = `\\(L_{trap} = L_{load} = \\) ${loadInductance.toString()}μH`
   document.getElementById("trapCapacitance").textContent = `\\(C_{trap} = \\frac 1 {(2πf)^2L_{trap}} = \\frac 1 {({2π${innerFrequency}MHz)^2}${trapInductance}μH} = \\) ${trapCapacitance.toString()}pF`
-  document.getElementById("trapReactanceSpan").textContent = `\\(X_{trap} =  {2πf_{inner}{L_{load}} } = {{2π${innerFrequency}MHz}{${loadInductance}Ω} } = \\) ${trapReactance.toString()}μH`
+  document.getElementById("trapReactanceSpan").textContent = `\\(X_{trap} =  {2πf_{inner}{L_{load}} } = {{2π${innerFrequency}MHz}{${loadInductance}μH} } = \\) ${trapReactance.toString()}Ω`
   
   MathJax.typeset()
 }
