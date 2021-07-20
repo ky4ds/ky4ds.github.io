@@ -75,17 +75,31 @@ Trap reactance, <span id="trapReactanceSpan">\\(X_{trap} = \\)</span>
 
 <input type="text" id="trapInductance" name="trapInductance" disabled="disabled" readonly hidden/>
 
-## Caveat
+## Caveats
 
 This is an experimental tool that has not been thorougly vetted. I have
 not yet built an antenna using this tool, however these values are close
 to alternative calculations I've done while designing and building my
 first trap dipole (which was successful).
 
-However, these calculations are just a starting point. I've noticed that
-practical LC circuits vary a fair amount from theoretical values
-calculated here. Traps need to be tuned, using an antenna analyzer, and
-you can expect final inductance/loading to differ.
+### Parasitic capacitance
+
+I've noticed that the practical resonant frequency is generally lower
+than the theoretical provided here. My guess is that the inductors have
+a significant amount of parasitic capacitance (more at higher
+frequencies). Resonant frequency is given by this formula:
+
+\\(f = \frac 1 {2π \sqrt{LC}} \\)
+
+Parasitic capacitance would have the effect of lowering the resonant
+frequency. To compensate, you'd need to lower inductance, which would
+then reduce loading.
+
+For example, on a 10m/20m trap/load I assembled recently (based on the
+default parameters for this tool), the inductance had to be dropped from
+6.28μH to 4.1μH. This drops the reactance from 555Ω to 362Ω. Theoretical
+loading was 20%, but practical loading turned out to be 15% due to
+parasitic capacitance.
 
 ## Notes
 
