@@ -2,14 +2,14 @@
 console.log('init');
 
 var inputIdsDefaultValues = {
-  innerFrequency: { inputId: "innerFrequency", default: "18.118" },
+  innerFrequency: { inputId: "innerFrequency", default: "28.090" },
   outerFrequency: { inputId: "outerFrequency", default: "14.055" },
   dipoleLength: { inputId: "dipoleLength", default: "10.17" },
-  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.7758" },
-  shortenAmount: { inputId: "shortenAmount", default: "0.02" },
+  coilFeedpointDistance: { inputId: "coilFeedpointDistance", default: "0.5" },
+  shortenAmount: { inputId: "shortenAmount", default: "0.2" },
   wireDiameter: { inputId: "wireDiameter", default: "1.628" },
   electricalHeight: { inputId: "electricalHeight", default: "6" },
-  reactanceLoad: { inputId: "reactanceLoad", default: "" },
+  loadReactance: { inputId: "loadReactance", default: "" },
   trapInductance: { inputId: "trapInductance", default: "" },
   trapCapacitance: { inputId: "trapCapacitance", default: "" },
 }
@@ -99,29 +99,41 @@ async function calcDipoleLength() {
   var wireDiameter = math.bignumber(inputElements.wireDiameter.elem.value)
   var electricalHeight = math.bignumber(inputElements.electricalHeight.elem.value)
   
+  console.log(`innerFrequency ${innerFrequency}`)
+  console.log(`outerFrequency ${outerFrequency}`)
+  
   var betaOne = math.evaluate(`90 - 90 * (${shortenAmount} + ${coilFeedpointDistance})`)
   var betaTwo = math.evaluate(`90 - 90 * ${coilFeedpointDistance}`)
   var impedanceZero = math.evaluate(`138 * log10(4*${electricalHeight} / (${wireDiameter} / ${1000}))`)
   var reactanceOne = math.evaluate(`-1 * ${impedanceZero} * cot(${betaOne} deg)`)
   var reactanceTwo = math.evaluate(`-1 * ${impedanceZero} * cot(${betaTwo} deg)`)
-  var reactanceLoad = math.round(math.evaluate(`${reactanceTwo} - ${reactanceOne}`),0)
-  var trapInductance = math.round(math.evaluate(`${reactanceLoad} / (2 * pi * ${outerFrequency})`),2)
-  var trapCapacitance = math.round(math.evaluate(`1 * 10^6 / ((2 * pi * ${innerFrequency})^2 * ${trapInductance})`),2)
+  
+  var loadReactance = math.round(math.evaluate(`${reactanceTwo} - ${reactanceOne}`),0)
+  var loadInductance = math.round(math.evaluate(`${loadReactance} / (2 * pi * ${outerFrequency})`),2)
+	
+  //var trapCapacitance = math.round(math.evaluate(`1 * 10^6 / ((2 * pi * ${innerFrequency})^2 * ${loadInductance})`),2)
+  var trapCapacitance = math.round(math.evaluate(`1 * 10^6 / ((2 * pi * ${innerFrequency})^2 * ${loadInductance})`),2)
+  
+  var trapReactance = math.round(math.evaluate(`2 * pi * ${innerFrequency} * ${loadInductance}`),0)
+  var trapInductance = math.round(math.evaluate(`${trapReactance} / (2 * pi * ${innerFrequency})`),2)
   
   console.log(`betaOne ${betaOne}`)
   console.log(`betaTwo ${betaTwo}`)
   console.log(`impedanceZero ${impedanceZero}`)
   console.log(`reactanceOne ${reactanceOne}`)
   console.log(`reactanceTwo ${reactanceTwo}`)
-  console.log(`reactanceLoad ${reactanceLoad}`)
-  console.log(`trapInductance ${trapInductance}`)
+  console.log(`loadReactance ${loadReactance}`)
+  console.log(`loadInductance ${loadInductance}`)
   console.log(`trapCapacitance ${trapCapacitance}`)
+  console.log(`trapReactance ${trapReactance}`)
+  console.log(`trapInductance ${trapInductance}`)
   
-  inputElements.reactanceLoad.elem.value = `${reactanceLoad.toString()}Ω`
-  document.getElementById("reactanceLoadSpan").textContent = `\\(X_L = \\) ${reactanceLoad.toString()}Ω`
-  inputElements.trapInductance.elem.value = `${trapInductance.toString()}μH`
-  document.getElementById("trapInductanceSpan").textContent = `\\(L_{trap} = \\frac {X_L} {2πf} = \\frac {${reactanceLoad}Ω} {{2π${outerFrequency}MHz}} = \\) ${trapInductance.toString()}μH`
-  document.getElementById("trapCapacitance").textContent = `\\(C_{trap} = \\frac 1 {(2πf)^2L_{trap}} = \\frac 1 {{2π${outerFrequency}MHz^2}${trapInductance}μH} = \\) ${trapCapacitance.toString()}pF`
+  inputElements.loadReactance.elem.value = `${loadReactance.toString()}Ω`
+  document.getElementById("loadReactanceSpan").textContent = `\\(X_{load} = \\) ${loadReactance.toString()}Ω`
+  document.getElementById("loadInductanceSpan").textContent = `\\(L_{load} = \\frac {X_{load}} {2πf_{outer}} = \\frac {${loadReactance}Ω} {{2π${outerFrequency}MHz}} = \\) ${trapInductance.toString()}μH`
+  document.getElementById("trapInductanceSpan").textContent = `\\(L_{trap} = L_{load} = \\) ${loadInductance.toString()}μH`
+  document.getElementById("trapCapacitance").textContent = `\\(C_{trap} = \\frac 1 {(2πf)^2L_{trap}} = \\frac 1 {({2π${innerFrequency}MHz)^2}${trapInductance}μH} = \\) ${trapCapacitance.toString()}pF`
+  document.getElementById("trapReactanceSpan").textContent = `\\(X_{trap} =  {2πf_{inner}{L_{load}} } = {{2π${innerFrequency}MHz}{${loadInductance}Ω} } = \\) ${trapReactance.toString()}μH`
   
   MathJax.typeset()
 }

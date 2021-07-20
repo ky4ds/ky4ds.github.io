@@ -11,8 +11,8 @@ categories: trap-dipole
 <script id="scratchpad" async src="/assets/js/custom/two-band-dipole-calc.js"></script>
 
 This is a calculator to assist with designing a two band shortened trap
-dipole. Prefilled values are for a 17/20m trapped dipole, with
-loading removing only 2% of antenna length.
+dipole. Prefilled values are for a 10/20m trapped dipole, with loading
+removing 20% of antenna length.
 
 Inner Frequency in MHz (trapped, higher frequency)
 
@@ -57,21 +57,35 @@ Electrical height from ground (in meters):
 
 <button id="calculate" onclick="calcDipoleLength();">Calculate</button>
 
-Load reactance, <span id="reactanceLoadSpan">\\(X_L = \\)</span>
+Load reactance, <span id="loadReactanceSpan">\\(X_{load} = \\)</span>
 
-<input type="text" id="reactanceLoad" name="reactanceLoad" disabled="disabled" readonly hidden/>
+<input type="text" id="loadReactance" name="loadReactance" disabled="disabled" readonly hidden/>
 
-Coil inductance, <span id="trapInductanceSpan">\\(L_{trap} = \\)</span>
+Load inductance, <span id="loadInductanceSpan">\\(L_{load} = \\)</span>
+
+<input type="text" id="loadInductance" name="loadInductance" disabled="disabled" readonly hidden/>
+
+Trap inductance, <span id="trapInductanceSpan">\\(L_{trap} = \\)</span>
 
 <input type="text" id="trapInductance" name="trapInductance" disabled="disabled" readonly hidden/>
 
 Trap capacitance, <span id="trapCapacitance">\\(C_{trap} = \\)</span>
 
+Trap reactance, <span id="trapReactanceSpan">\\(X_{trap} = \\)</span>
+
+<input type="text" id="trapInductance" name="trapInductance" disabled="disabled" readonly hidden/>
+
 ## Caveat
 
-I have not yet built an antenna using this tool, however these values
-are close to alternative calculations I've done while designing and
-building my first trap dipole (which was successful).
+This is an experimental tool that has not been thorougly vetted. I have
+not yet built an antenna using this tool, however these values are close
+to alternative calculations I've done while designing and building my
+first trap dipole (which was successful).
+
+However, these calculations are just a starting point. I've noticed that
+practical LC circuits vary a fair amount from theoretical values
+calculated here. Traps need to be tuned, using an antenna analyzer, and
+you can expect final inductance/loading to differ.
 
 ## Notes
 
@@ -91,9 +105,10 @@ However, the proper calculation would have been
 
 **It is very important to compute the amount to shorten and coil
 distance and as accurately as possible**, since these inputs can produce
-wide swings in inductive reactance, \\(X_L\\). Do not just go by band
-meters! For this tool, that means entering precise frequencies to
-calculate accurate values.
+wide swings in inductive reactance, \\(X_L\\), which will produce wide
+swings in your antenna dimenions. Do not just go by band meters! For
+this tool, that means entering precise frequencies to calculate accurate
+values.
 
 As explained by CT1EOJ, the electrical height is difficult to measure.
 Electrical height and wire diameter are inputs to the antenna wire
