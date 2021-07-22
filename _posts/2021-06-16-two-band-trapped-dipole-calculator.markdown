@@ -93,7 +93,8 @@ frequencies). Resonant frequency is given by this formula:
 
 Parasitic capacitance would have the effect of lowering the resonant
 frequency. To compensate, you'd need to lower inductance, which would
-then reduce loading.
+then reduce loading. Or, to maintain the same loading, you could
+compensate for parasitic capacitance by reducing your capacitor value.
 
 For example, on a 10m/20m trap/load I assembled recently (based on the
 default parameters for this tool), the inductance had to be dropped from
